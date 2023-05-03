@@ -20,8 +20,6 @@ navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {file: "Research.html", title: "Research"}
   - {file: "Julian_CV.pdf", title: "Press articles"}
   - {file: "Julian_CV.pdf", title: "Output gaps data"}
-  - {file: "README.md"}
-  - {file: "CV"}
 
 external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:julianroarozo@gmail.com"}
