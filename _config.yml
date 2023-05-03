@@ -16,7 +16,7 @@ minimal: false             # use a dark header
 # Menu
 
 navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {url: "/roarozojulian/roarozojulian.github.io/raw/master/files/Julian_Roa_Rozo_CV_BM%20(12).pdf" , title: "CV"}
+  - {url: "/roarozojulian/roarozojulian.github.io/raw/master/files/Julian_Roa_Rozo_CV_BM (12).pdf" , title: "CV"}
   - {file: "Research.html", title: "Research"}
   - {file: "Press.html", title: "Press articles"}
   - {file: "Julian_CV.pdf", title: "Output gaps data"}
