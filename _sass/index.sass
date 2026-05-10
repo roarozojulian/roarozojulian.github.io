@@ -3,9 +3,13 @@ $font-weight: 400 !default
 $font-family: "PT Sans", -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif !default
 $heading-weight: 600 !default
 $line-height: 1.6 !default
-$link-color: #68f !default
-$dark: #ffffff !default
-$light: #212228 !default
+
+// ---- Slate & ember palette ----
+$link-color: #1F3A4F !default      // primary: links, headings (slate blue)
+$accent-color: #B8651B !default    // secondary: nav links (ember)
+$muted-color: #7E8B8E !default     // soft accent: used later for tags
+$dark: #ffffff !default            // page background (kept white)
+$light: #000000 !default           // body text (pure black)
 
 @function reduce ($percent)
   @return rgba(mix($dark, $light), $percent / 100)
