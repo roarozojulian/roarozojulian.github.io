@@ -1,0 +1,151 @@
+---
+layout: page
+title: "Evidence-based consultancy"
+permalink: /Consultancy/
+---
+
+<p style="margin-bottom: 2em;">Applied research and policy work commissioned by public and private organizations. Each engagement combines macroeconometric tools with the specific context of the client and the question.</p>
+
+
+<section class="research-section">
+  <h2 class="research-section-title">Recent projects</h2>
+
+  <article class="research-card">
+    <a class="research-card-image-link" data-modal="consulting-project-1">
+      <img class="research-card-image" src="/files/REPLACE_WITH_PROJECT_THUMBNAIL.png" alt="REPLACE_WITH_PROJECT_TITLE">
+    </a>
+    <div class="research-card-body">
+      <a class="research-card-title" data-modal="consulting-project-1" href="#">REPLACE_WITH_PROJECT_TITLE</a>
+      <div class="research-card-meta">REPLACE_WITH_CLIENT_NAME · REPLACE_WITH_YEAR</div>
+      <p class="research-card-desc">REPLACE_WITH_ONE_LINE_TEASER.</p>
+    </div>
+  </article>
+
+  <article class="research-card">
+    <a class="research-card-image-link" data-modal="consulting-project-2">
+      <img class="research-card-image" src="/files/REPLACE_WITH_PROJECT_THUMBNAIL.png" alt="REPLACE_WITH_PROJECT_TITLE">
+    </a>
+    <div class="research-card-body">
+      <a class="research-card-title" data-modal="consulting-project-2" href="#">REPLACE_WITH_PROJECT_TITLE</a>
+      <div class="research-card-meta">REPLACE_WITH_CLIENT_NAME · REPLACE_WITH_YEAR</div>
+      <p class="research-card-desc">REPLACE_WITH_ONE_LINE_TEASER.</p>
+    </div>
+  </article>
+
+</section>
+
+
+<!-- ===== MODALS ===== -->
+
+<div class="research-modal" id="consulting-project-1">
+  <div class="research-modal-overlay" data-close></div>
+  <div class="research-modal-content">
+    <button class="research-modal-close" data-close>&times;</button>
+    <img class="research-modal-image" src="/files/REPLACE_WITH_PROJECT_THUMBNAIL.png" alt="REPLACE_WITH_PROJECT_TITLE">
+    <h2 class="research-modal-title">REPLACE_WITH_PROJECT_TITLE</h2>
+    <div class="research-modal-meta">REPLACE_WITH_CLIENT_NAME · REPLACE_WITH_YEAR</div>
+
+    <div class="research-modal-section">
+      <h3>Brief</h3>
+      <p>REPLACE_WITH_WHAT_THE_CLIENT_ASKED_FOR.</p>
+    </div>
+
+    <div class="research-modal-section">
+      <h3>Approach</h3>
+      <p>REPLACE_WITH_METHODS_OR_TOOLS_USED.</p>
+    </div>
+
+    <div class="research-modal-section">
+      <h3>Key findings</h3>
+      <ul>
+        <li>REPLACE_WITH_FINDING_1</li>
+        <li>REPLACE_WITH_FINDING_2</li>
+        <li>REPLACE_WITH_FINDING_3</li>
+      </ul>
+    </div>
+
+    <div class="research-modal-section">
+      <h3>Topics</h3>
+      <div class="research-modal-keywords">
+        <span class="research-keyword">topic 1</span>
+        <span class="research-keyword">topic 2</span>
+        <span class="research-keyword">topic 3</span>
+      </div>
+    </div>
+
+    <!-- Delete the line below if the report is not publicly available -->
+    <a class="research-modal-pdf" href="REPLACE_WITH_REPORT_URL" target="_blank">Read the report →</a>
+  </div>
+</div>
+
+
+<div class="research-modal" id="consulting-project-2">
+  <div class="research-modal-overlay" data-close></div>
+  <div class="research-modal-content">
+    <button class="research-modal-close" data-close>&times;</button>
+    <img class="research-modal-image" src="/files/REPLACE_WITH_PROJECT_THUMBNAIL.png" alt="REPLACE_WITH_PROJECT_TITLE">
+    <h2 class="research-modal-title">REPLACE_WITH_PROJECT_TITLE</h2>
+    <div class="research-modal-meta">REPLACE_WITH_CLIENT_NAME · REPLACE_WITH_YEAR</div>
+
+    <div class="research-modal-section">
+      <h3>Brief</h3>
+      <p>REPLACE_WITH_WHAT_THE_CLIENT_ASKED_FOR.</p>
+    </div>
+
+    <div class="research-modal-section">
+      <h3>Approach</h3>
+      <p>REPLACE_WITH_METHODS_OR_TOOLS_USED.</p>
+    </div>
+
+    <div class="research-modal-section">
+      <h3>Key findings</h3>
+      <ul>
+        <li>REPLACE_WITH_FINDING_1</li>
+        <li>REPLACE_WITH_FINDING_2</li>
+        <li>REPLACE_WITH_FINDING_3</li>
+      </ul>
+    </div>
+
+    <div class="research-modal-section">
+      <h3>Topics</h3>
+      <div class="research-modal-keywords">
+        <span class="research-keyword">topic 1</span>
+        <span class="research-keyword">topic 2</span>
+      </div>
+    </div>
+
+    <a class="research-modal-pdf" href="REPLACE_WITH_REPORT_URL" target="_blank">Read the report →</a>
+  </div>
+</div>
+
+
+<script>
+(function() {
+  function openModal(id) {
+    var m = document.getElementById(id);
+    if (!m) return;
+    m.classList.add('open');
+    document.body.classList.add('modal-open');
+  }
+  function closeAll() {
+    document.querySelectorAll('.research-modal.open').forEach(function(m) {
+      m.classList.remove('open');
+    });
+    document.body.classList.remove('modal-open');
+  }
+  document.addEventListener('click', function(e) {
+    var trigger = e.target.closest('[data-modal]');
+    if (trigger) {
+      e.preventDefault();
+      openModal(trigger.dataset.modal);
+      return;
+    }
+    if (e.target.closest('[data-close]')) {
+      closeAll();
+    }
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeAll();
+  });
+})();
+</script>
