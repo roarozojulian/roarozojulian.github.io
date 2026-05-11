@@ -18,6 +18,7 @@ minimal: false             # use a dark header
 navigation:                # accepts {file, title, url, icon, sidebaricon}
   - {url: "https://roarozojulian.github.io/files/Julian_Roa_Rozo_CV_BM (12).pdf", target="_blank" , title: "CV"}
   - {file: "Research.html", title: "Research"}
+  - {file: "Consultancy.html", title: "Evidence-based consultancy"}
   - {file: "Press.html", title: "Press articles"}
   - {file: "Outputgaps.html", title: "Output gaps data"}
 
