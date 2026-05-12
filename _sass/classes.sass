@@ -154,18 +154,18 @@ a:hover .icon
   &:last-child
     border-bottom: none
 .research-card-image-link
-  flex: 0 0 180px
+  flex: 0 0 360px
   display: block
-  width: 180px
-  height: 120px
+  width: 360px
   cursor: pointer
   transition: opacity .2s
   &:hover
     opacity: .85
 .research-card-image
   width: 100%
-  height: 100%
-  object-fit: cover
+  height: auto
+  max-height: 280px
+  object-fit: contain
   border-radius: 3px
   display: block
 .research-card-body
@@ -197,7 +197,7 @@ a:hover .icon
   .research-card-image-link
     flex: 0 0 auto
     width: 100%
-    height: 180px
+    height: auto
 .research-modal
   display: none
   position: fixed
