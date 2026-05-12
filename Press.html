@@ -1,36 +1,38 @@
 ---
 layout: default
-title: "Research"
-permalink: /Research/
+title: "Press articles"
+permalink: /Press/
 backgroundcolor: white
 ---
 
-<!-- Fraunces display font (PT Sans loaded site-wide) -->
+<!-- Load Fraunces for the display headings (PT Sans is already loaded site-wide for body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 
 <style>
   /* =========================================================
-     Research page — styles scoped under .research-page so they
-     don't collide with the existing .research-card / .research-modal
-     CSS in _sass/classes.sass (which we still rely on for the modals).
+     Press page — all styles scoped under .press to avoid
+     collisions with the existing global .press-list / .press-feature
+     rules in _sass/classes.sass.
      ========================================================= */
-  .research-page {
-    --r-ink:         #0F1419;
-    --r-ink-soft:    #3B4452;
-    --r-navy:        #1F3A4F;
-    --r-accent:      #0F766E;
-    --r-muted:       #7E8B8E;
-    --r-paper:       #FAF9F7;
-    --r-rule:        rgba(15, 20, 25, 0.09);
-    --r-rule-strong: rgba(15, 20, 25, 0.18);
-    --r-dark:        #0A0E13;
-    --r-dark-soft:   rgba(255, 255, 255, 0.72);
-    --r-display:     "Fraunces", Georgia, serif;
+  .press {
+    --p-ink:         #0F1419;
+    --p-ink-soft:    #3B4452;
+    --p-navy:        #1F3A4F;
+    --p-accent:      #0F766E;
+    --p-muted:       #7E8B8E;
+    --p-paper:       #FAF9F7;
+    --p-rule:        rgba(15, 20, 25, 0.09);
+    --p-rule-strong: rgba(15, 20, 25, 0.18);
+    --p-dark:        #0A0E13;
+    --p-dark-soft:   rgba(255, 255, 255, 0.72);
+    --p-display:     "Fraunces", Georgia, serif;
     position: relative;
   }
-  .research-page::before {
+
+  /* Subtle dot-grid background, scoped to this article */
+  .press::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -39,45 +41,45 @@ backgroundcolor: white
     pointer-events: none;
     z-index: 0;
   }
-  .research-page > * { position: relative; z-index: 1; }
+  .press > * { position: relative; z-index: 1; }
 
-  /* -------- Page header -------- */
-  .research-page .r-eyebrow {
+  /* -------- Page header (eyebrow + Fraunces title + copper rule) -------- */
+  .press .p-eyebrow {
     font-size: 0.78rem;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--r-accent);
+    color: var(--p-accent);
     font-weight: 700;
     margin: 0 0 0.9rem;
   }
-  .research-page h1.r-title {
-    font-family: var(--r-display);
+  .press h1.p-title {
+    font-family: var(--p-display);
     font-weight: 600;
     font-size: clamp(2.6rem, 5.5vw, 4.2rem);
     line-height: 1;
     letter-spacing: -0.025em;
-    color: var(--r-ink);
+    color: var(--p-ink);
     margin: 0 0 1.1rem;
   }
-  .research-page .r-title a { color: inherit; text-decoration: none; box-shadow: none; }
-  .research-page .r-rule {
+  .press .p-title a { color: inherit; text-decoration: none; box-shadow: none; }
+  .press .p-rule {
     width: 64px;
     height: 3px;
-    background: var(--r-accent);
+    background: var(--p-accent);
     margin: 0 0 1.8rem;
     border: 0;
   }
-  .research-page .r-intro {
-    max-width: 44rem;
-    color: var(--r-ink-soft);
+  .press .p-intro {
+    max-width: 42rem;
+    color: var(--p-ink-soft);
     line-height: 1.7;
     margin: 0 0 2.5rem;
     text-align: left;
   }
 
-  /* -------- Featured paper band (near-black, full-bleed) -------- */
-  .research-page .r-featured {
-    background: var(--r-dark);
+  /* -------- Featured band (near-black, breaks out of article padding) -------- */
+  .press .p-featured {
+    background: var(--p-dark);
     color: #F4F4F2;
     padding: 3.5rem 1.5rem;
     margin: 2rem calc(-1 * max(1.5em, 22% - 6em));
@@ -85,14 +87,14 @@ backgroundcolor: white
     overflow: hidden;
     border-radius: 2px;
   }
-  .research-page .r-featured::before {
+  .press .p-featured::before {
     content: "";
     position: absolute;
     left: 0; top: 0; bottom: 0;
     width: 3px;
-    background: var(--r-accent);
+    background: var(--p-accent);
   }
-  .research-page .r-featured-inner {
+  .press .p-featured-inner {
     max-width: 60rem;
     margin: 0 auto;
     display: grid;
@@ -100,335 +102,513 @@ backgroundcolor: white
     gap: 3rem;
     align-items: center;
   }
-  .research-page .r-featured-label {
+  .press .p-featured-label {
     font-size: 0.75rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--r-accent);
+    color: var(--p-accent);
     font-weight: 700;
     margin: 0 0 0.9rem;
   }
-  .research-page .r-featured h2 {
-    font-family: var(--r-display);
+  .press .p-featured h2 {
+    font-family: var(--p-display);
     font-weight: 500;
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
     line-height: 1.18;
     letter-spacing: -0.02em;
     margin: 0 0 0.6rem;
     color: #FFF;
   }
-  .research-page .r-featured-meta {
+  .press .p-featured-date {
     font-style: italic;
-    color: var(--r-accent);
-    font-size: 0.88rem;
+    color: var(--p-accent);
+    font-size: 0.85rem;
     margin-bottom: 1.3rem;
   }
-  .research-page .r-featured-desc {
-    color: var(--r-dark-soft);
+  .press .p-featured-summary {
+    color: var(--p-dark-soft);
     line-height: 1.7;
     margin: 0 0 1.6rem;
     font-size: 0.96rem;
     text-align: left;
   }
-  .research-page .r-featured-image {
+  .press .p-featured-image {
     background: #1A1F26;
     padding: 1.2rem;
     border-radius: 3px;
     text-align: center;
     margin: 0;
-    cursor: pointer;
-    transition: opacity 0.15s;
   }
-  .research-page .r-featured-image:hover { opacity: 0.92; }
-  .research-page .r-featured-image img {
+  .press .p-featured-image img {
     max-width: 100%;
-    max-height: 360px;
+    max-height: 320px;
     border-radius: 2px;
     margin: 0;
   }
 
   /* -------- Buttons -------- */
-  .research-page a.r-btn {
+  .press a.p-btn {
     display: inline-block;
     padding: 0.5em 1em;
     font-size: 0.85rem;
     font-weight: 700;
-    border: 1.5px solid var(--r-navy);
-    color: var(--r-navy);
+    border: 1.5px solid var(--p-navy);
+    color: var(--p-navy);
     border-radius: 3px;
     text-decoration: none;
     transition: all 0.15s;
     box-shadow: none;
-    cursor: pointer;
   }
-  .research-page a.r-btn:hover {
-    background: var(--r-navy);
+  .press a.p-btn:hover {
+    background: var(--p-navy);
     color: #FFF;
     text-decoration: none;
   }
-  .research-page a.r-btn.accent { border-color: var(--r-accent); color: var(--r-accent); }
-  .research-page a.r-btn.accent:hover { background: var(--r-accent); color: #FFF; }
-  .research-page a.r-btn.on-dark { border-color: rgba(255,255,255,0.55); color: #FFF; }
-  .research-page a.r-btn.on-dark:hover { background: #FFF; color: var(--r-dark); }
-  .research-page a.r-btn.on-dark.accent { border-color: var(--r-accent); color: var(--r-accent); }
-  .research-page a.r-btn.on-dark.accent:hover { background: var(--r-accent); color: #FFF; }
-  .research-page .r-btn-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.6rem; }
+  .press a.p-btn.copper { border-color: var(--p-accent); color: var(--p-accent); }
+  .press a.p-btn.copper:hover { background: var(--p-accent); color: #FFF; }
+  .press a.p-btn.on-dark { border-color: rgba(255, 255, 255, 0.55); color: #FFF; }
+  .press a.p-btn.on-dark:hover { background: #FFF; color: var(--p-dark); }
+  .press a.p-btn.on-dark.copper { border-color: var(--p-accent); color: var(--p-accent); }
+  .press a.p-btn.on-dark.copper:hover { background: var(--p-accent); color: #FFF; }
+  .press .p-btn-row { display: flex; gap: 0.55rem; flex-wrap: wrap; }
 
-  /* -------- Section header -------- */
-  .research-page .r-section {
-    margin: 3.5rem 0 0;
+  /* -------- Year filter -------- */
+  .press .p-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.1rem 0;
+    margin: 2rem 0 0.5rem;
+    border-top: 1px solid var(--p-rule);
+    border-bottom: 1px solid var(--p-rule);
   }
-  .research-page .r-section-header {
-    border-bottom: 1px solid var(--r-rule);
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
-  }
-  .research-page .r-section h2.r-section-title {
-    font-family: var(--r-display);
-    font-weight: 600;
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    letter-spacing: -0.015em;
-    color: var(--r-ink);
-    margin: 0 0 0.5rem;
-    line-height: 1.1;
-  }
-  .research-page .r-section-count {
+  .press .p-filter-label {
     font-size: 0.78rem;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--r-accent);
+    color: var(--p-ink-soft);
     font-weight: 700;
+    margin-right: 0.7rem;
+  }
+  .press .p-year-pill {
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.38em 0.95em;
+    border: 1.5px solid var(--p-rule-strong);
+    background: transparent;
+    color: var(--p-ink);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.4em;
+  }
+  .press .p-year-pill .count {
+    font-size: 0.72em;
+    font-weight: 400;
+    color: var(--p-muted);
+  }
+  .press .p-year-pill:hover {
+    border-color: var(--p-accent);
+    color: var(--p-accent);
+  }
+  .press .p-year-pill:hover .count { color: var(--p-accent); }
+  .press .p-year-pill.active {
+    background: var(--p-accent);
+    border-color: var(--p-accent);
+    color: #FFF;
+  }
+  .press .p-year-pill.active .count { color: rgba(255, 255, 255, 0.78); }
+
+  .press .p-results {
+    font-size: 0.82rem;
+    color: var(--p-muted);
+    font-style: italic;
+    margin: 1rem 0 1.5rem;
   }
 
-  /* -------- Cards -------- */
-  .research-page .r-list { margin: 0; padding: 0; list-style: none; }
-  .research-page .r-card {
+  /* -------- Card list (uniform grid, no alternating) -------- */
+  .press .p-list { margin: 0; padding: 0; list-style: none; }
+  .press .p-card {
     display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--r-rule);
+    grid-template-columns: 240px 1fr;
+    gap: 1.8rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--p-rule);
     align-items: start;
     list-style: none;
   }
-  .research-page .r-card:last-child { border-bottom: none; }
+  .press .p-card.hidden { display: none; }
 
-  .research-page .r-thumb {
-    background: var(--r-paper);
-    border: 1px solid var(--r-rule);
+  .press .p-thumb {
+    background: var(--p-paper);
+    border: 1px solid var(--p-rule);
     border-radius: 3px;
-    padding: 0.8rem;
+    padding: 0.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    cursor: pointer;
-    transition: opacity 0.15s;
     margin: 0;
   }
-  .research-page .r-thumb:hover { opacity: 0.85; }
-  .research-page .r-thumb img {
+  .press .p-thumb img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
     margin: 0;
     border-radius: 0;
   }
+  .press .p-thumb { cursor: zoom-in; transition: opacity 0.15s; }
+  .press .p-thumb:hover { opacity: 0.85; }
+  .press .p-featured-image { cursor: zoom-in; transition: opacity 0.15s; }
+  .press .p-featured-image:hover { opacity: 0.92; }
 
-  .research-page .r-card-body { min-width: 0; }
-  .research-page .r-card-meta {
-    font-size: 0.83rem;
-    color: var(--r-accent);
-    font-style: italic;
-    margin-bottom: 0.5rem;
+  .press .p-card-body { min-width: 0; }
+  .press .p-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    margin-bottom: 0.45rem;
+    flex-wrap: wrap;
   }
-  .research-page .r-card-title {
-    font-family: var(--r-display);
+  .press .p-tag-new, .press .p-tag-voxeu {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #FFF;
+    padding: 0.2em 0.55em;
+    border-radius: 2px;
+  }
+  .press .p-tag-new   { background: var(--p-accent); }
+  .press .p-tag-voxeu { background: var(--p-navy); }
+
+  .press .p-card-date {
+    font-size: 0.82rem;
+    color: var(--p-accent);
+    font-style: italic;
+  }
+  .press .p-card-title {
+    font-family: var(--p-display);
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     line-height: 1.25;
     letter-spacing: -0.012em;
-    color: var(--r-ink);
-    margin: 0 0 0.7rem;
+    color: var(--p-ink);
+    margin: 0 0 0.45rem;
   }
-  .research-page .r-card-title a {
+  .press .p-card-title a {
     color: inherit;
     box-shadow: none;
     text-decoration: none;
   }
-  .research-page .r-card-title a:hover { color: var(--r-accent); text-decoration: none; }
-  .research-page .r-card-desc {
-    color: var(--r-ink-soft);
-    font-size: 0.95rem;
+  .press .p-card-title a:hover { color: var(--p-accent); text-decoration: none; }
+
+  .press .p-card-coauthors {
+    font-size: 0.8rem;
+    color: var(--p-ink-soft);
+    font-style: italic;
+    margin: 0 0 0.6rem;
+  }
+  .press .p-card-summary {
+    color: var(--p-ink-soft);
+    font-size: 0.93rem;
     line-height: 1.65;
-    margin: 0;
+    margin: 0.5rem 0 0.9rem;
     text-align: justify;
   }
-
-  @media (max-width: 720px) {
-    .research-page .r-featured-inner { grid-template-columns: 1fr; gap: 1.8rem; }
-    .research-page .r-featured-image { order: -1; }
-    .research-page .r-card { grid-template-columns: 1fr; gap: 1rem; }
-    .research-page .r-thumb { aspect-ratio: 16 / 9; }
+  .press .p-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.32rem;
+    margin-bottom: 0.9rem;
+  }
+  .press .p-topic-chip {
+    font-size: 0.71rem;
+    padding: 0.22em 0.65em;
+    background: rgba(126, 139, 142, 0.13);
+    color: var(--p-muted);
+    border-radius: 3px;
+    font-weight: 700;
   }
 
-  /* Hide highlights section in modal when empty (we render a sentinel class) */
-  .research-modal-section.is-empty { display: none; }
+  .press .p-empty {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--p-muted);
+    font-style: italic;
+    display: none;
+  }
+  .press .p-empty.show { display: block; }
+
+  @media (max-width: 720px) {
+    .press .p-featured-inner { grid-template-columns: 1fr; gap: 1.8rem; }
+    .press .p-featured-image { order: -1; }
+    .press .p-card { grid-template-columns: 1fr; gap: 1rem; }
+    .press .p-thumb { aspect-ratio: 16 / 9; }
+  }
+
+  /* -------- Lightbox -------- */
+  .p-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(10, 14, 19, 0.88);
+    cursor: zoom-out;
+    animation: pLightboxIn 0.18s ease-out;
+  }
+  .p-lightbox.open { display: flex; }
+  @keyframes pLightboxIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .p-lightbox-figure {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+  }
+  .p-lightbox-img {
+    max-width: 95vw;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: #fff;
+  }
+  .p-lightbox-caption {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 60ch;
+    font-style: italic;
+  }
+  .p-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: 0;
+    color: #FFF;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    transition: background 0.15s;
+  }
+  .p-lightbox-close:hover { background: rgba(255, 255, 255, 0.12); }
+  body.p-modal-open { overflow: hidden; }
 </style>
 
-<article class="research-page">
+<article class="press">
 
   <!-- ========= Page header ========= -->
-  <div class="r-eyebrow">Publications · 2021 – 2024</div>
-  <h1 class="r-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
-  <hr class="r-rule">
-  <p class="r-intro">
-    My research focuses on macroeconomics, with two main strands: <strong>GDP and
-    unemployment hysteresis</strong>, and <strong>monetary policy spillovers to
-    Latin American economies</strong>. The papers below span peer-reviewed
-    publications, book chapters, and working papers. Click any image to read the
-    abstract, keywords, and highlights.
+  <div class="p-eyebrow">Opinion · 2019 – 2026</div>
+  <h1 class="p-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
+  <hr class="p-rule">
+  <p class="p-intro">
+    Monthly opinion columns written for <strong>Econometría Consultores</strong>, mostly
+    published in <em>La República</em>, a Colombian economic newspaper. The columns
+    track Colombia's and Latin America's macroeconomic outlook — inflation, growth,
+    fiscal stance, monetary policy. A few, closer to my research, have appeared in
+    <em>Vox-EU</em>.
   </p>
 
-  <!-- ========= Featured paper (dark band) ========= -->
-  {% for p in site.data.research %}{% if p.featured %}
-  <section class="r-featured">
-    <div class="r-featured-inner">
+  <!-- ========= Featured (latest) column in dark band ========= -->
+  {% for c in site.data.press %}{% if c.featured %}
+  <section class="p-featured">
+    <div class="p-featured-inner">
       <div>
-        <div class="r-featured-label">Peer-reviewed · {{ p.meta | split: "·" | last | strip }}</div>
-        <h2>{{ p.title }}</h2>
-        <div class="r-featured-meta">{{ p.meta }}</div>
-        <p class="r-featured-desc">{{ p.description }}</p>
-        <div class="r-btn-row">
-          <a class="r-btn on-dark" href="{{ p.url }}" target="_blank" rel="noopener">Read in journal →</a>
-          <a class="r-btn on-dark accent" data-modal="{{ p.id }}" href="#{{ p.id }}">Details</a>
+        <div class="p-featured-label">Latest column · {{ c.date }}</div>
+        <h2>{{ c.title }}</h2>
+        <div class="p-featured-date">{{ c.date }} · {{ c.venue | default: "La República" }}</div>
+        <p class="p-featured-summary">{{ c.summary }}</p>
+        <div class="p-btn-row">
+          <a class="p-btn on-dark" href="{{ c.web }}" target="_blank" rel="noopener">Read column →</a>
+          {% if c.pdf %}<a class="p-btn on-dark copper" href="{{ '/files/' | append: c.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
         </div>
       </div>
-      <div class="r-featured-image" data-modal="{{ p.id }}" tabindex="0" role="button" aria-label="View details: {{ p.title }}">
-        <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
+      <div class="p-featured-image">
+        <img src="{{ '/files/' | append: c.image | relative_url }}" alt="{{ c.title }}">
       </div>
     </div>
   </section>
   {% endif %}{% endfor %}
 
-  <!-- ========= Sections (book chapters, working papers) ========= -->
-  {% assign type_order = "book-chapter|Book chapters,working-paper|Working papers" | split: "," %}
-  {% for entry in type_order %}
-    {% assign parts = entry | split: "|" %}
-    {% assign t = parts[0] %}
-    {% assign label = parts[1] %}
-    {% assign group = site.data.research | where: "type", t %}
-    {% if group.size > 0 %}
-    <section class="r-section">
-      <div class="r-section-header">
-        <div class="r-section-count">{{ label | upcase }} · {{ group.size }}</div>
-        <h2 class="r-section-title">{{ label }}</h2>
+  <!-- ========= Year filter ========= -->
+  {% assign years = site.data.press | map: "year" | uniq | sort | reverse %}
+  <div class="p-filter" role="tablist" aria-label="Filter columns by year">
+    <span class="p-filter-label">Filter by year</span>
+    <button type="button" class="p-year-pill active" data-year="all">
+      All <span class="count">{{ site.data.press | size }}</span>
+    </button>
+    {% for y in years %}
+      {% assign yc = site.data.press | where: "year", y | size %}
+      <button type="button" class="p-year-pill" data-year="{{ y }}">
+        {{ y }} <span class="count">{{ yc }}</span>
+      </button>
+    {% endfor %}
+  </div>
+  <p class="p-results" id="p-results">
+    Showing all {{ site.data.press | size }} columns.
+  </p>
+
+  <!-- ========= Press list (all non-featured columns) ========= -->
+  <ul class="p-list" id="p-list">
+    {% for c in site.data.press %}{% unless c.featured %}
+    <li class="p-card" data-year="{{ c.year }}">
+      <div class="p-thumb">
+        <img src="{{ '/files/' | append: c.image | relative_url }}" alt="{{ c.title }}" loading="lazy">
       </div>
-      <ul class="r-list">
-        {% for p in group %}
-        <li class="r-card">
-          <div class="r-thumb" data-modal="{{ p.id }}" tabindex="0" role="button" aria-label="View details: {{ p.title }}">
-            <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy">
-          </div>
-          <div class="r-card-body">
-            <div class="r-card-meta">{{ p.meta }}</div>
-            <h3 class="r-card-title"><a data-modal="{{ p.id }}" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
-            <p class="r-card-desc">{{ p.description }}</p>
-            <div class="r-btn-row">
-              <a class="r-btn" href="{{ p.url }}" target="_blank" rel="noopener">Read paper →</a>
-              <a class="r-btn accent" data-modal="{{ p.id }}" href="#{{ p.id }}">Details</a>
-            </div>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-    {% endif %}
-  {% endfor %}
+      <div class="p-card-body">
+        <div class="p-card-meta">
+          {% if c.new %}<span class="p-tag-new">New</span>{% endif %}
+          {% if c.venue == "Vox-EU" %}<span class="p-tag-voxeu">Vox-EU</span>{% endif %}
+          <span class="p-card-date">{{ c.date }}</span>
+        </div>
+        <h3 class="p-card-title"><a href="{{ c.web }}" target="_blank" rel="noopener">{{ c.title }}</a></h3>
+        {% if c.coauthors %}<div class="p-card-coauthors">With {{ c.coauthors }}</div>{% endif %}
+        <p class="p-card-summary">{{ c.summary }}</p>
+        <div class="p-topics">
+          {% for t in c.topics %}<span class="p-topic-chip">{{ t }}</span>{% endfor %}
+        </div>
+        <div class="p-btn-row">
+          <a class="p-btn" href="{{ c.web }}" target="_blank" rel="noopener">Read column →</a>
+          {% if c.pdf %}<a class="p-btn copper" href="{{ '/files/' | append: c.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+        </div>
+      </div>
+    </li>
+    {% endunless %}{% endfor %}
+  </ul>
+
+  <p class="p-empty" id="p-empty">No columns from this year.</p>
 
 </article>
 
-<!-- ========= Modals (one per paper, using existing .research-modal-* CSS) ========= -->
-{% for p in site.data.research %}
-<div class="research-modal" id="{{ p.id }}">
-  <div class="research-modal-overlay" data-close></div>
-  <div class="research-modal-content">
-    <button class="research-modal-close" data-close>&times;</button>
-    <img class="research-modal-image" src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
-    <h2 class="research-modal-title">{{ p.title }}</h2>
-    <div class="research-modal-meta">{{ p.meta }}</div>
-
-    <div class="research-modal-section">
-      <h3>Abstract</h3>
-      <p>{{ p.abstract }}</p>
-    </div>
-
-    {% if p.keywords.size > 0 %}
-    <div class="research-modal-section">
-      <h3>Keywords</h3>
-      <div class="research-modal-keywords">
-        {% for k in p.keywords %}<span class="research-keyword">{{ k }}</span>{% endfor %}
-      </div>
-    </div>
-    {% endif %}
-
-    {% if p.highlights.size > 0 %}
-    <div class="research-modal-section">
-      <h3>Highlights</h3>
-      <ul>
-        {% for h in p.highlights %}<li>{{ h }}</li>{% endfor %}
-      </ul>
-    </div>
-    {% endif %}
-
-    <a class="research-modal-pdf" href="{{ p.url }}" target="_blank" rel="noopener">Read the full paper →</a>
-  </div>
+<!-- ========= Lightbox (single instance, reused for any image) ========= -->
+<div class="p-lightbox" id="p-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+  <button type="button" class="p-lightbox-close" id="p-lightbox-close" aria-label="Close image viewer">×</button>
+  <figure class="p-lightbox-figure">
+    <img class="p-lightbox-img" id="p-lightbox-img" alt="">
+    <figcaption class="p-lightbox-caption" id="p-lightbox-caption"></figcaption>
+  </figure>
 </div>
-{% endfor %}
 
 <script>
 (function () {
-  // Modal open / close — same mechanic as the original Research page,
-  // works on any element with data-modal="paper-id"
-  function openModal(id) {
-    var m = document.getElementById(id);
-    if (!m) return;
-    m.classList.add('open');
-    document.body.classList.add('modal-open');
-  }
-  function closeAll() {
-    document.querySelectorAll('.research-modal.open').forEach(function (m) {
-      m.classList.remove('open');
+  const pills   = document.querySelectorAll('.press .p-year-pill');
+  const cards   = document.querySelectorAll('.press .p-card');
+  const results = document.getElementById('p-results');
+  const empty   = document.getElementById('p-empty');
+  const total   = cards.length;
+
+  function applyFilter(year) {
+    let visible = 0;
+    cards.forEach(card => {
+      const match = year === 'all' || card.dataset.year === year;
+      card.classList.toggle('hidden', !match);
+      if (match) visible++;
     });
-    document.body.classList.remove('modal-open');
+    if (year === 'all') {
+      results.textContent = `Showing all ${total} columns.`;
+    } else {
+      results.textContent = `Showing ${visible} column${visible === 1 ? '' : 's'} from ${year}.`;
+    }
+    empty.classList.toggle('show', visible === 0);
   }
 
-  document.addEventListener('click', function (e) {
-    var trigger = e.target.closest('[data-modal]');
-    if (trigger) {
-      e.preventDefault();
-      openModal(trigger.dataset.modal);
-      return;
-    }
-    if (e.target.closest('[data-close]')) {
-      closeAll();
-    }
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const year = pill.dataset.year;
+      applyFilter(year);
+      if (year === 'all') {
+        history.replaceState(null, '', window.location.pathname);
+      } else {
+        history.replaceState(null, '', '#' + year);
+      }
+    });
   });
 
-  // Keyboard: Enter / Space opens modal when trigger is focused; ESC closes
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeAll();
-      return;
+  // Honor hash on load (e.g. /Press/#2024)
+  const initial = window.location.hash.replace('#', '');
+  if (initial && [...pills].some(p => p.dataset.year === initial)) {
+    pills.forEach(p => p.classList.toggle('active', p.dataset.year === initial));
+    applyFilter(initial);
+  }
+
+  // ====== Lightbox ======
+  const lb        = document.getElementById('p-lightbox');
+  const lbImg     = document.getElementById('p-lightbox-img');
+  const lbCaption = document.getElementById('p-lightbox-caption');
+  const lbClose   = document.getElementById('p-lightbox-close');
+  const thumbs    = document.querySelectorAll('.press .p-thumb, .press .p-featured-image');
+  let lastFocused = null;
+
+  function openLightbox(imgEl, captionText) {
+    lastFocused = document.activeElement;
+    lbImg.src = imgEl.src;
+    lbImg.alt = imgEl.alt || '';
+    lbCaption.textContent = captionText || imgEl.alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('p-modal-open');
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('p-modal-open');
+    lbImg.src = '';
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  thumbs.forEach(thumb => {
+    const img = thumb.querySelector('img');
+    if (!img) return;
+    // Make the wrapper keyboard-accessible too
+    thumb.setAttribute('tabindex', '0');
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', 'View image: ' + (img.alt || 'column figure'));
+
+    // Pull date from the same card so the caption has context
+    const card = thumb.closest('.p-card') || thumb.closest('.p-featured');
+    let caption = img.alt || '';
+    if (card) {
+      const dateEl = card.querySelector('.p-card-date, .p-featured-date');
+      if (dateEl) caption = (img.alt || '') + ' — ' + dateEl.textContent.trim();
     }
-    if (e.key === 'Enter' || e.key === ' ') {
-      var active = document.activeElement;
-      if (active && active.dataset && active.dataset.modal) {
+
+    thumb.addEventListener('click', () => openLightbox(img, caption));
+    thumb.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openModal(active.dataset.modal);
+        openLightbox(img, caption);
       }
-    }
+    });
+  });
+
+  // Click overlay (but not the figure itself) to close
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLightbox();
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
   });
 })();
 </script>
