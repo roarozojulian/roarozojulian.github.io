@@ -262,6 +262,10 @@ backgroundcolor: white
     margin: 0;
     border-radius: 0;
   }
+  .press .p-thumb { cursor: zoom-in; transition: opacity 0.15s; }
+  .press .p-thumb:hover { opacity: 0.85; }
+  .press .p-featured-image { cursor: zoom-in; transition: opacity 0.15s; }
+  .press .p-featured-image:hover { opacity: 0.92; }
 
   .press .p-card-body { min-width: 0; }
   .press .p-card-meta {
@@ -347,6 +351,66 @@ backgroundcolor: white
     .press .p-card { grid-template-columns: 1fr; gap: 1rem; }
     .press .p-thumb { aspect-ratio: 16 / 9; }
   }
+
+  /* -------- Lightbox -------- */
+  .p-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(10, 14, 19, 0.88);
+    cursor: zoom-out;
+    animation: pLightboxIn 0.18s ease-out;
+  }
+  .p-lightbox.open { display: flex; }
+  @keyframes pLightboxIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .p-lightbox-figure {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: default;
+  }
+  .p-lightbox-img {
+    max-width: 95vw;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 2px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    background: #fff;
+  }
+  .p-lightbox-caption {
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    text-align: center;
+    max-width: 60ch;
+    font-style: italic;
+  }
+  .p-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    background: none;
+    border: 0;
+    color: #FFF;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    transition: background 0.15s;
+  }
+  .p-lightbox-close:hover { background: rgba(255, 255, 255, 0.12); }
+  body.p-modal-open { overflow: hidden; }
 </style>
 
 <article class="press">
@@ -434,6 +498,15 @@ backgroundcolor: white
 
 </article>
 
+<!-- ========= Lightbox (single instance, reused for any image) ========= -->
+<div class="p-lightbox" id="p-lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+  <button type="button" class="p-lightbox-close" id="p-lightbox-close" aria-label="Close image viewer">×</button>
+  <figure class="p-lightbox-figure">
+    <img class="p-lightbox-img" id="p-lightbox-img" alt="">
+    <figcaption class="p-lightbox-caption" id="p-lightbox-caption"></figcaption>
+  </figure>
+</div>
+
 <script>
 (function () {
   const pills   = document.querySelectorAll('.press .p-year-pill');
@@ -477,5 +550,65 @@ backgroundcolor: white
     pills.forEach(p => p.classList.toggle('active', p.dataset.year === initial));
     applyFilter(initial);
   }
+
+  // ====== Lightbox ======
+  const lb        = document.getElementById('p-lightbox');
+  const lbImg     = document.getElementById('p-lightbox-img');
+  const lbCaption = document.getElementById('p-lightbox-caption');
+  const lbClose   = document.getElementById('p-lightbox-close');
+  const thumbs    = document.querySelectorAll('.press .p-thumb, .press .p-featured-image');
+  let lastFocused = null;
+
+  function openLightbox(imgEl, captionText) {
+    lastFocused = document.activeElement;
+    lbImg.src = imgEl.src;
+    lbImg.alt = imgEl.alt || '';
+    lbCaption.textContent = captionText || imgEl.alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('p-modal-open');
+    lbClose.focus();
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('p-modal-open');
+    lbImg.src = '';
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+
+  thumbs.forEach(thumb => {
+    const img = thumb.querySelector('img');
+    if (!img) return;
+    // Make the wrapper keyboard-accessible too
+    thumb.setAttribute('tabindex', '0');
+    thumb.setAttribute('role', 'button');
+    thumb.setAttribute('aria-label', 'View image: ' + (img.alt || 'column figure'));
+
+    // Pull date from the same card so the caption has context
+    const card = thumb.closest('.p-card') || thumb.closest('.p-featured');
+    let caption = img.alt || '';
+    if (card) {
+      const dateEl = card.querySelector('.p-card-date, .p-featured-date');
+      if (dateEl) caption = (img.alt || '') + ' — ' + dateEl.textContent.trim();
+    }
+
+    thumb.addEventListener('click', () => openLightbox(img, caption));
+    thumb.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(img, caption);
+      }
+    });
+  });
+
+  // Click overlay (but not the figure itself) to close
+  lb.addEventListener('click', e => {
+    if (e.target === lb) closeLightbox();
+  });
+  lbClose.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
+  });
 })();
 </script>
