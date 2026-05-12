@@ -75,78 +75,6 @@ backgroundcolor: white
     text-align: left;
   }
 
-  /* -------- Featured paper band (near-black, full-bleed) -------- */
-  .research-page .r-featured {
-    background: var(--r-dark);
-    color: #F4F4F2;
-    padding: 3.5rem 1.5rem;
-    margin: 2rem calc(-1 * max(1.5em, 22% - 6em));
-    position: relative;
-    overflow: hidden;
-    border-radius: 2px;
-  }
-  .research-page .r-featured::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    background: var(--r-accent);
-  }
-  .research-page .r-featured-inner {
-    max-width: 60rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .research-page .r-featured-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--r-accent);
-    font-weight: 700;
-    margin: 0 0 0.9rem;
-  }
-  .research-page .r-featured h2 {
-    font-family: var(--r-display);
-    font-weight: 500;
-    font-size: clamp(1.7rem, 3vw, 2.4rem);
-    line-height: 1.18;
-    letter-spacing: -0.02em;
-    margin: 0 0 0.6rem;
-    color: #FFF;
-  }
-  .research-page .r-featured-meta {
-    font-style: italic;
-    color: var(--r-accent);
-    font-size: 0.88rem;
-    margin-bottom: 1.3rem;
-  }
-  .research-page .r-featured-desc {
-    color: var(--r-dark-soft);
-    line-height: 1.7;
-    margin: 0 0 1.6rem;
-    font-size: 0.96rem;
-    text-align: left;
-  }
-  .research-page .r-featured-image {
-    background: #1A1F26;
-    padding: 1.2rem;
-    border-radius: 3px;
-    text-align: center;
-    margin: 0;
-    cursor: pointer;
-    transition: opacity 0.15s;
-  }
-  .research-page .r-featured-image:hover { opacity: 0.92; }
-  .research-page .r-featured-image img {
-    max-width: 100%;
-    max-height: 360px;
-    border-radius: 2px;
-    margin: 0;
-  }
-
   /* -------- Buttons -------- */
   .research-page a.r-btn {
     display: inline-block;
@@ -168,15 +96,14 @@ backgroundcolor: white
   }
   .research-page a.r-btn.accent { border-color: var(--r-accent); color: var(--r-accent); }
   .research-page a.r-btn.accent:hover { background: var(--r-accent); color: #FFF; }
-  .research-page a.r-btn.on-dark { border-color: rgba(255,255,255,0.55); color: #FFF; }
-  .research-page a.r-btn.on-dark:hover { background: #FFF; color: var(--r-dark); }
-  .research-page a.r-btn.on-dark.accent { border-color: var(--r-accent); color: var(--r-accent); }
-  .research-page a.r-btn.on-dark.accent:hover { background: var(--r-accent); color: #FFF; }
   .research-page .r-btn-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.6rem; }
 
   /* -------- Section header -------- */
   .research-page .r-section {
     margin: 3.5rem 0 0;
+  }
+  .research-page .r-section:first-of-type {
+    margin-top: 1rem;
   }
   .research-page .r-section-header {
     border-bottom: 1px solid var(--r-rule);
@@ -189,15 +116,8 @@ backgroundcolor: white
     font-size: clamp(1.6rem, 3vw, 2rem);
     letter-spacing: -0.015em;
     color: var(--r-ink);
-    margin: 0 0 0.5rem;
+    margin: 0;
     line-height: 1.1;
-  }
-  .research-page .r-section-count {
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--r-accent);
-    font-weight: 700;
   }
 
   /* -------- Cards -------- */
@@ -291,29 +211,8 @@ backgroundcolor: white
     abstract, keywords, and highlights.
   </p>
 
-  <!-- ========= Featured paper (dark band) ========= -->
-  {% for p in site.data.research %}{% if p.featured %}
-  <section class="r-featured">
-    <div class="r-featured-inner">
-      <div>
-        <div class="r-featured-label">Peer-reviewed · {{ p.meta | split: "·" | last | strip }}</div>
-        <h2>{{ p.title }}</h2>
-        <div class="r-featured-meta">{{ p.meta }}</div>
-        <p class="r-featured-desc">{{ p.description }}</p>
-        <div class="r-btn-row">
-          <a class="r-btn on-dark" href="{{ p.url }}" target="_blank" rel="noopener">Read in journal →</a>
-          <a class="r-btn on-dark accent" data-modal="{{ p.id }}" href="#{{ p.id }}">Details</a>
-        </div>
-      </div>
-      <div class="r-featured-image" data-modal="{{ p.id }}" tabindex="0" role="button" aria-label="View details: {{ p.title }}">
-        <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
-      </div>
-    </div>
-  </section>
-  {% endif %}{% endfor %}
-
-  <!-- ========= Sections (book chapters, working papers) ========= -->
-  {% assign type_order = "book-chapter|Book chapters,working-paper|Working papers" | split: "," %}
+  <!-- ========= Sections (peer-reviewed → book chapters → working papers) ========= -->
+  {% assign type_order = "peer-reviewed|Peer-reviewed publications,book-chapter|Book chapters,working-paper|Working papers" | split: "," %}
   {% for entry in type_order %}
     {% assign parts = entry | split: "|" %}
     {% assign t = parts[0] %}
@@ -322,7 +221,6 @@ backgroundcolor: white
     {% if group.size > 0 %}
     <section class="r-section">
       <div class="r-section-header">
-        <div class="r-section-count">{{ label | upcase }} · {{ group.size }}</div>
         <h2 class="r-section-title">{{ label }}</h2>
       </div>
       <ul class="r-list">
