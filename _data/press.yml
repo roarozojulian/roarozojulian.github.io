@@ -1,0 +1,478 @@
+# _data/press.yml
+# All opinion columns, newest first. Add a new entry at the top when publishing.
+# Fields:
+#   date     : display string
+#   year     : integer (used by the year filter)
+#   title    : column title
+#   image    : filename relative to /files/
+#   topics   : 1-3 short tags
+#   summary  : short paragraph
+#   web      : link to article webpage
+#   pdf      : link to PDF (optional)
+#   venue    : publication name (default: La República)
+#   coauthors: free-text co-authors (optional)
+#   featured : true on exactly one entry (rendered large in dark band)
+#   new      : true on most recent 2-3 entries (shows NEW tag)
+
+- date: "February 20, 2026"
+  year: 2026
+  title: "Can you change the direction in which the clock hands move?"
+  image: "Goodwin2.png"
+  topics: ["Labor markets", "Growth"]
+  summary: >
+    Connects two key 2026 events in Colombia: the 2025 GDP data (2.6% growth, below
+    expectations, dragged down by collapsing investment in machinery) and the protests
+    supporting the minimum wage decree. Using the Goodwin and Bhaduri–Marglin models,
+    I examine whether Colombia's economy is profit-led or wage-led. Four decades of
+    data consistently show a clockwise (profit-led) pattern. Pushing wages above
+    productivity compresses margins, stalls investment, and fuels inflation. The shift
+    to a wage-led economy requires structural transformation — not decrees.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/se-puede-cambiar-el-sentido-de-las-manecillas-del-reloj-4331617"
+  pdf: "PDF_Feb2026_smallpdf.pdf"
+  featured: true
+  new: true
+
+- date: "January 23, 2026"
+  year: 2026
+  title: "2026: A ticking time bomb masquerading as stability"
+  image: "Bombaestablidad.png"
+  topics: ["Fiscal policy", "Inflation"]
+  summary: >
+    2025 closed with solid numbers — GDP near 2.8–3%, unemployment around 9% — but
+    inflation stayed high due to a widening fiscal deficit. In 2026, growth should
+    reach 2.8–3.3%, yet inflation may hit 6–6.5%. Externally, the dollar has weakened
+    amid U.S. institutional erosion under Trump, pushing the Colombian peso stronger.
+    The minimum wage hike (23.7%) is the wild card: inflation expectations jumped
+    from ~4.5% to 6.2%, likely forcing a 200-basis-point rate increase. Behind the
+    apparent stability, an unprecedented fiscal time bomb is building.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/2026-una-bomba-de-tiempo-bajo-fachada-de-estabilidad-4310399"
+  pdf: "PDF_Ene2026_cropped.pdf"
+  new: true
+
+- date: "November 21, 2025"
+  year: 2025
+  title: "Colombia's inflation is a fiscal problem"
+  image: "PhillipsCurveUptodate2.png"
+  topics: ["Inflation", "Fiscal policy"]
+  summary: >
+    In early 2025, analysts forecast ~4% inflation and ~10% unemployment for Colombia —
+    but inflation exceeded 5% and unemployment fell to ~9%. A non-linear Phillips curve
+    model actually captured this well: the forecasting miss wasn't a model failure but
+    a failure to anticipate the scale of fiscal demand. Government consumption surged
+    14.9%, and the fiscal deficit ballooned to an expected 7–9% of GDP, far beyond
+    official plans. Fiscal consolidation is the real key to bringing inflation and
+    interest rates down.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/la-inflacion-en-colombia-es-un-problema-fiscal-4274396"
+  pdf: "PDF_Nov2025_cropped.pdf"
+  new: true
+
+- date: "August 29, 2025"
+  year: 2025
+  title: "Moving stars in Colombia's sky"
+  image: "Movingstars.png"
+  topics: ["Monetary policy", "Growth"]
+  summary: >
+    Macroeconomic policy, like celestial navigation, relies on unobservable stars —
+    potential growth (g*), the neutral interest rate (r*), and the NAIRU (U*) — to
+    chart its course. In Colombia, g* has fallen from 4.5% to 2.7%, largely due to
+    collapsing fixed investment. The neutral rate has risen to roughly 6% in nominal
+    terms, driven by fiscal pressures and shifting consumption patterns. Only the
+    NAIRU offers good news, settling near 10% without lasting pandemic scarring.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/estrellas-moviles-en-el-firmamento-colombiano-4211845"
+  pdf: "PDF_Aug2025_cropped.pdf"
+
+- date: "May 23, 2025"
+  year: 2025
+  title: "Something odd is going on in this town"
+  image: "Algoraro.png"
+  topics: ["Growth"]
+  summary: >
+    Colombia's post-pandemic economy shows an unusual pattern: GDP growth has been
+    driven by household consumption rather than investment, which has fallen sharply.
+    Colombians now spend 75% of GDP on consumption — well above OECD norms — with
+    spending on recreation, sports, and culture surging ~85% since 2019. Possible
+    drivers include expanded internet access (from 50% to 65.6% of households),
+    cheaper telecom services, and cultural-sector incentives. Whether this shift is
+    temporary or structural matters.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/algo-raro-esta-pasando-en-este-pueblo-4140381"
+  pdf: "PDF_May2025_cropped.pdf"
+
+- date: "April 25, 2025"
+  year: 2025
+  title: "Towards a Kindleberger spiral?"
+  image: "Kindleberger.png"
+  topics: ["Trade", "Latin America"]
+  summary: >
+    Using the Kindleberger spiral — the iconic chart of collapsing global trade
+    during the Great Depression — as a starting point, this column explores the
+    potential effects of Trump's 2025 tariffs. The IMF data shows the trade war has
+    already hurt growth and inflation forecasts worldwide, but we are far from a
+    1930s-style collapse. For Colombia, the direct impact is limited. Yet the country
+    faces its own risks: high public debt, shrinking fiscal space, and short-sighted
+    measures like fast-tracking future tax revenue.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/hacia-una-espiral-de-kindleberger-4118593"
+  pdf: "PDF_Apr2025_cropped.pdf"
+
+- date: "February 28, 2025"
+  year: 2025
+  title: "Three notes on 2024's GDP figures"
+  image: "Threenotes.png"
+  topics: ["Growth"]
+  summary: >
+    Three notes on Colombia's 2024 GDP (1.74%): growth beat most forecasts but remains
+    insufficient; the growth pattern is healthier, with investment recovering, yet
+    public infrastructure spending lags; and the demand adjustment that helped curb
+    inflation has ended, with the rising GDP deflator signaling potential inflationary
+    pressures. These challenges call for smarter public investment and continued
+    monetary policy caution.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/tres-apuntes-sobre-la-cifra-del-pib-de-2024-4073980"
+  pdf: "PDF_Feb2025_cropped.pdf"
+
+- date: "January 17, 2025"
+  year: 2025
+  title: "2025: A clear sky that could turn dark"
+  image: "Cielo.png"
+  topics: ["Growth", "Inflation"]
+  summary: >
+    A year ago, we forecasted a painless disinflation for Colombia in 2024 — and it
+    largely came true. For 2025, GDP growth is projected at 2.5–3%, and inflation
+    should finally meet the central bank's target at 3.5–4%. However, gray clouds
+    loom: diesel price adjustments, a high minimum wage increase, and recent currency
+    depreciation could fuel inflation. The biggest concern is fiscal: a deficit above
+    5% of GDP and a government forced to cut spending.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/2025-un-cielo-despejado-que-se-puede-tornar-oscuro-4038452"
+  pdf: "PDF_Jan2025_cropped.pdf"
+
+- date: "July 12, 2024"
+  year: 2024
+  title: "About inflation future"
+  image: "FuturoInflacion.png"
+  topics: ["Inflation"]
+  summary: >
+    Global inflation has declined but is stabilizing above pre-pandemic levels. Two
+    structural forces explain this: deglobalization and population aging will push
+    prices higher, while some central banks opportunistically raised inflation targets
+    (the Fed and ECB in 2020–2021) and others lost credibility. We may be entering a
+    new era of structurally higher inflation. Policymakers need a forward-looking
+    stance; fiscal austerity can support disinflation.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/sobre-el-futuro-de-la-inflacion-3905983"
+  pdf: "PDF_Jul2024_cropped.pdf"
+
+- date: "January 12, 2024"
+  year: 2024
+  title: "2024: painless disinflation"
+  image: "PhillipsCurve1.png"
+  topics: ["Inflation", "Labor markets"]
+  summary: >
+    After a tough 2023 — with GDP growth near 1%, inflation at 9.2%, and a slowing
+    labor market — 2024 could be the year Colombia tames inflation without major
+    social costs. The nonlinear Phillips curve suggests that, with unemployment near
+    its structural rate, small labor market shifts can significantly reduce inflation.
+    Exchange rate appreciation and fading supply shocks should further ease prices.
+    Core inflation could drop to ~4.5% by year-end.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/2024-desinflacion-sin-dolor-3779165"
+  pdf: "PDF_Jan2024_cropped.pdf"
+
+- date: "October 6, 2023"
+  year: 2023
+  title: "Colombia's inflation"
+  image: "InflacionColombiana.png"
+  topics: ["Inflation"]
+  summary: >
+    Colombia's inflation has a unique persistence problem rooted in fuel subsidies.
+    By not adjusting fuel prices during 2021, the government stimulated growth but
+    redirected household spending toward other goods, driving up core inflation far
+    beyond OECD peers. While global inflation was concentrated in volatile energy
+    prices that fell quickly, Colombia's settled into sticky components like services
+    and rents. In the medium term, reducing fossil fuel dependence is key.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/inflacion-a-la-colombiana-combustibles-y-persistencia-3722017"
+  pdf: "PDF_Oct2023_cropped.pdf"
+
+- date: "August 25, 2023"
+  year: 2023
+  title: "Confidence crisis?"
+  image: "CrisisdeConfianza.png"
+  topics: ["Growth"]
+  summary: >
+    The Colombian economy is converging to its pre-pandemic trend faster than
+    expected, yet investment (gross fixed capital formation) has fallen roughly 10%,
+    led by declines in "Other buildings and structures" and "Housing." This drop is
+    driven primarily by a confidence crisis and elevated uncertainty — reflected in
+    stock market volatility and Fedesarrollo's negative confidence indices — rather
+    than by restrictive monetary policy, as Brazil's case illustrates.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/crisis-de-confianza-3687619"
+  pdf: "Opinionpiece20-08-2023_cut_2.pdf"
+
+- date: "June 16, 2023"
+  year: 2023
+  title: "Is the economy boosted by wages or profits?"
+  image: "Economiajalonada.png"
+  topics: ["Labor markets"]
+  summary: >
+    The labor reform debate in Colombia centers on whether raising wages will increase
+    informality and destroy jobs — as critics and a Banco de la República study
+    suggest (estimating around half a million jobs lost) — or whether higher wages
+    will boost aggregate demand, production, and employment, as Keynesian defenders
+    argue. Using Goodwin's Marxist cycle model and its Bhaduri-Marglin extension, the
+    key question is whether Colombia is profit-led or wage-led. The evidence supports
+    profit-led.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/economia-jalonada-por-los-beneficios-o-por-los-salarios-3638447"
+  pdf: "Opinionpiece16-06-2023_cut.pdf"
+
+- date: "May 5, 2023"
+  year: 2023
+  title: "Where is the potential?"
+  image: "PIBPotencial.png"
+  topics: ["Monetary policy", "Latin America"]
+  summary: >
+    The authors propose a new trend-cycle decomposition that allows for hysteresis —
+    shocks affecting both components simultaneously — published as a working paper by
+    Banco de la República. Applying it to 80+ countries, they find COVID-19 caused
+    long-term GDP losses of 1–4% globally, with over half of countries showing GDP
+    above potential, suggesting demand-driven inflation. In Latin America, Colombia
+    recovered strongly, while Mexico remains about five percentage points below trend.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/donde-esta-el-potencial-3608331"
+  pdf: "Opinionpiece05-05-2023_cut.pdf"
+
+- date: "January 13, 2023"
+  year: 2023
+  title: "2023: A difficult year"
+  image: "2023dificil.png"
+  topics: ["Growth"]
+  summary: >
+    Colombia faces a tough 2023. Growth is revised down from 2% to 1%, as household
+    consumption — the main economic driver in 2021–2022 — stalled by late 2022, with
+    a 2.2% drop reminiscent of the late-1990s crisis. Inflation is expected to close
+    between 7–8%, pressured by a weak peso and tight monetary policy. Unemployment
+    may rise to 11.8%, masking deeper labor market weakness.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/2023-un-ano-dificil-3522158"
+  pdf: "Opinionpiece01-13-2023_cut.pdf"
+
+- date: "October 21, 2022"
+  year: 2022
+  title: "A dark storm cloud rises in the sky"
+  image: "Nubarron.png"
+  topics: ["Growth", "Inflation"]
+  summary: >
+    The IMF's latest outlook warns of a global slowdown in 2023. Colombia closed 2022
+    strong (~8% growth), but analysts consistently underestimated both growth and
+    inflation. For 2023, inflation will likely remain high (7–8%) due to contractionary
+    monetary policy abroad, rising gasoline prices, and minimum wage hikes — well
+    above the IMF's 5.3% forecast. The column urges continued rate hikes and
+    inflation-adjusted transfers to protect the most vulnerable.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/un-negro-nubarron-se-alza-en-el-cielo-3473749"
+  pdf: "Opinionpiece10-21-2022_cut.pdf"
+
+- date: "August 12, 2022"
+  year: 2022
+  title: "Why is Colombia growing so much?"
+  image: "Crecetanto.png"
+  topics: ["Growth"]
+  summary: >
+    Colombia's exceptionally high growth rates aren't well explained by traditional
+    macro factors. Public spending during the pandemic was moderate compared to peers,
+    and monetary policy, while accommodative, wasn't uniquely expansive. Two
+    underappreciated drivers stand out: the 2021 national strike made fuel price
+    hikes politically impossible, effectively subsidizing transport-dependent
+    industries via the FEPC; and WOM's entry into telecoms drove down prices precisely
+    when remote work surged.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/por-que-colombia-crece-tanto-3423204"
+  pdf: "Opinionpiece12-08-2022_cut.pdf"
+
+- date: "March 11, 2022"
+  year: 2022
+  title: "Implications of the Russia–Ukraine war"
+  image: "UcraniaRusia.png"
+  topics: ["Inflation", "Trade"]
+  summary: >
+    The Russia–Ukraine war fuels global inflation by disrupting oil, gas, and
+    agricultural exports (corn, wheat, urea). Colombia faces food inflation above 15%
+    and total inflation likely over 7% by end of 2022, forcing the central bank to
+    raise rates above 7%. However, not everything is negative: the Colombian peso has
+    appreciated ~150 pesos since the war began, driven by higher oil prices and
+    Latin America emerging as an investment haven.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/implicaciones-de-la-guerra-rusia-ucrania-3320192"
+  pdf: "Opinionpiece11-03-2022_cut.pdf"
+
+- date: "February 25, 2022"
+  year: 2022
+  title: "Circular economy: an approach that generates profitability"
+  image: "EconomiaCircular.png"
+  topics: ["Latin America", "Growth"]
+  coauthors: "Oscar Rodriguez, Erika Nieves, Guillermo Rudas, Paula Rivera"
+  summary: >
+    A study conducted by Econometría for CEPAL, with support from the EU and
+    Euroclima, built a dynamic macroeconomic model to assess the economic effects of
+    reducing the use of plastics, metals, construction materials, and fuels in the
+    Pacific Alliance countries. In a conservative scenario — reducing plastic use by
+    8% and other materials by 5% by 2030 — GDP gains range from 0.8% to 2.4%,
+    employment rises 1.1–1.9%, and GHG emissions fall up to 6.7%.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/economia-circular-enfoque-que-genera-rentabilidad-3310647"
+  pdf: "Opinionpiece02-25-2022_cut.pdf"
+
+- date: "November 28, 2021"
+  year: 2021
+  title: "The 2021 surge in inflation: A look at sticky prices"
+  image: "Stickyprices.png"
+  topics: ["Inflation"]
+  venue: "Vox-EU"
+  summary: >
+    Sticky-price inflation is inflation in the CPI components with infrequent price
+    changes — where price setters are typically more forward looking. A look at
+    sticky-price inflation provides relevant insights: it can help set aside movements
+    in the relative price of goods, and it may also provide information on future CPI
+    inflation. In October 2021, monthly sticky price inflation, partially corrected
+    for base effects, was 5.3%. The CPI inflation forecast for October 2022 is 5.6%.
+  web: "https://cepr.org/voxeu/columns/2021-surge-inflation-look-sticky-prices"
+
+- date: "September 17, 2021"
+  year: 2021
+  title: "Should interest rates really be raised?"
+  image: "Subirtasas.png"
+  topics: ["Monetary policy"]
+  summary: >
+    This column questions whether Colombia's central bank should raise interest rates
+    in September 2021. While Taylor Rule models support a hike — given inflation near
+    the upper target band, peso depreciation, and GDP growth above 7% — I argued that
+    the data alone shouldn't guide the decision. Much of the inflationary pressure
+    stems from a supply shock in food prices caused by the national strike (28A
+    blockades), not from overheating demand.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/realmente-se-deben-subir-las-tasas-de-interes-3233787"
+  pdf: "Opinionpiece09-17-2021_cut.pdf"
+
+- date: "March 5, 2021"
+  year: 2021
+  title: "Economic growth and the CONPES recovery framework"
+  image: "Conpes.png"
+  topics: ["COVID-19", "Growth"]
+  summary: >
+    Colombia's COVID-19 crisis caused a 6.8% GDP drop, record-low inflation, and 16%
+    unemployment. Growth forecasts (~4.5% for 2021) suggest pre-pandemic output won't
+    return until 2022. The CONPES 4023 recovery plan has strengths — especially its
+    focus on infrastructure-driven job creation and extending Ingreso Solidario — but
+    raises concerns: the timeline for generating 2.5 million jobs is unclear, and it
+    lacks active employment policies for women and youth.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/crecimiento-economico-y-el-conpes-de-reactivacion-3134788"
+  pdf: "Opinionpiece03-05-2021_cut.pdf"
+
+- date: "January 22, 2021"
+  year: 2021
+  title: "We'll remain in 2020 until June"
+  image: "todavia2020.png"
+  topics: ["COVID-19", "Growth"]
+  summary: >
+    In early 2021, economic uncertainty in Colombia was high. Growth projections
+    ranged from 0.8% to 8%, with Econometría estimating 4.5%. Recovery hinged largely
+    on the vaccination plan, whose feasibility was doubtful: Colombia would need
+    146,000 daily doses, a figure very few countries had achieved. The first half of
+    2021 was expected to remain stagnant, with a meaningful reactivation only in the
+    second half.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/seguiremos-en-2020-hasta-junio-3114075"
+  pdf: "Opinionpiece01-22-2021_cut.pdf"
+
+- date: "October 30, 2020"
+  year: 2020
+  title: "Between the Nike curve and the W curve"
+  image: "NikeandW.png"
+  topics: ["COVID-19", "Growth"]
+  summary: >
+    Colombia's economic recovery follows a Nike-curve shape rather than a V — GDP
+    falling ~7–8% in 2020 with only partial rebound in 2021. Labor market and
+    inflation data from August–September suggest the downturn may be slightly less
+    severe than IMF forecasts, driven by the informal sector's quick return once
+    lockdowns eased. However, this reopening raises the risk of a second COVID wave,
+    which would trigger a W-shaped curve.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/entre-la-curva-nike-y-la-curva-w-3082125"
+  pdf: "Opinionpiece10-30-2020_cut.pdf"
+
+- date: "August 7, 2020"
+  year: 2020
+  title: "A V-shaped recovery?"
+  image: "CurvaV.png"
+  topics: ["COVID-19", "Growth"]
+  summary: >
+    Colombia's Ministry of Finance forecasts a V-shaped recovery — a 5.5% GDP drop in
+    2020 followed by 6.6% growth in 2021. However, most analysts expect a slower,
+    Nike-swoosh recovery, with pre-crisis output levels returning only between 2022
+    and 2025. An overly optimistic forecast is dangerous: it leads to weaker fiscal
+    stimulus and masks the true scale of debt and deficit ratios. In a severe crisis,
+    planning for the worst scenario is safer.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/curva-v-3042331"
+
+- date: "April 18, 2020"
+  year: 2020
+  title: "Extreme measures for extreme times"
+  image: "MedidasExtremas.png"
+  topics: ["COVID-19", "Monetary policy"]
+  summary: >
+    The coronavirus is both a health and economic crisis. Conventional monetary policy
+    — rate cuts, quantitative easing — proves insufficient because normal transmission
+    channels break down during quarantine and uncertainty. Fiscal responses are
+    essential: payroll subsidies, loan guarantees, and cash transfers help, but mostly
+    reach formal workers. Ultimately, "helicopter money" — central bank financing of
+    public spending — is a viable option given low inflation expectations.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/las-medidas-extremas-para-tiempos-extremos-2993971"
+  pdf: "Opinionpiece04-18-2020_cut.pdf"
+
+- date: "March 20, 2020"
+  year: 2020
+  title: "The coronavirus attacks the lung of the economy"
+  image: "Pulmon.png"
+  topics: ["COVID-19"]
+  coauthors: "Mauricio Olivera"
+  summary: >
+    The COVID-19 pandemic hit Colombia's economy through simultaneous supply and
+    demand shocks, compounded by the oil price war between Saudi Arabia and Russia.
+    The sharp currency devaluation won't boost exports since oil prices and external
+    demand collapsed. Short-term policy must focus on containment and protecting
+    vulnerable populations through fiscal relief. Once the crisis passes, aggressive
+    fiscal and monetary measures will be needed to drive recovery.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/el-coronavirus-ataca-el-pulmon-de-la-economia-colombiana-2980700"
+  pdf: "Opinionpiece03-20-2020_cut.pdf"
+
+- date: "January 24, 2020"
+  year: 2020
+  title: "2020: More of the same?"
+  image: "2020mismo.png"
+  topics: ["Growth"]
+  summary: >
+    2019 was a bad year for the global economy — only 11% of world GDP saw faster
+    growth, dragged down by Brexit and the US–China trade war. Latin America suffered
+    too. Colombia stood out with 3.2% growth, but unemployment topped 10% and the
+    current account deficit hit -4% of GDP. For 2020, the outlook is more of the same:
+    ~3.3% growth, persistent unemployment, stable interest rates, and inflation near
+    the upper target band.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/2020-mas-de-lo-mismo-2955671"
+  pdf: "Opinionpiece24-01-2020_cut.pdf"
+
+- date: "November 1, 2019"
+  year: 2019
+  title: "Latin America in flames"
+  image: "LatinoLlamas.png"
+  topics: ["Latin America"]
+  coauthors: "Mauricio Olivera"
+  summary: >
+    Latin America is in crisis. After the lost decade of the 80s, pro-market reforms
+    of the 90s failed expectations, leading to left-wing governments that rode the
+    commodities boom to expand social programs. When commodity prices fell in 2014,
+    growth collapsed and structural issues — inequality and low productivity —
+    persisted. The pendulum swung back to pro-market governments, but adjustment
+    efforts have also fallen short, sparking widespread unrest.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/america-latina-en-llamas-2927587"
+  pdf: "Opinionpiece11-01-2019_cut.pdf"
+
+- date: "July 26, 2019"
+  year: 2019
+  title: "Latin America won't grow in 2019"
+  image: "2019nocrece.png"
+  topics: ["Latin America", "Growth"]
+  coauthors: "LAECO"
+  summary: >
+    LAECO, the Latin American Alliance of Economic Consultancies, projects that the
+    region's GDP will contract by -0.1% in 2019, downgrading its March estimate by
+    1.1 percentage points. Recessions in Argentina and Venezuela, plus slowdowns in
+    Brazil, Mexico, Ecuador, and Uruguay, drive this stagnation. Colombia, while not
+    growing at desired rates, outperforms most peers. Efficient public spending and
+    supportive monetary policy could help weather the regional storm.
+  web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/latinoamerica-no-crecera-en-2019-2889088"
+  pdf: "Opinionpiece26-07-2019_cut.pdf"
