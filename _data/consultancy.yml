@@ -1,0 +1,724 @@
+# _data/consultancy.yml
+# Auto-generated from HV_Julian_Roa_CV-Atelier_v7.xlsx. Edit by hand from here on.
+#
+# Project fields:
+#   id           : unique slug
+#   employer     : the consulting firm / institution
+#   role         : your role on this project
+#   role_period  : date range of the role
+#   title        : project name
+#   client       : end client / counterpart
+#   client_slug  : logo filename → /files/logos/<slug>.png (falls back to name)
+#   bullet       : description of what you did
+#   themes       : list of theme codes (see themes: taxonomy above)
+#   tools        : list of tool codes (see tools: taxonomy above)
+#   pops         : list of population codes (kept for reference, not filterable)
+
+themes:
+  '1': Macroeconomics & monetary policy
+  '2': Forecasting & market intelligence
+  '3': Social policy, nutrition & ECD
+  '4': Education
+  '5': Employment & innovation
+  '6': Decent work & rights
+  '7': Sectoral & industrial regulation
+  '8': Environment & circular economy
+  '9': Institutional strengthening
+  '10': Rural & agroindustrial development
+tools:
+  i: Impact evaluation (RCT, DiD, PSM, RDD)
+  ii: Quantitative & econometric analysis
+  iii: Macroeconometric models & forecasting
+  iv: Sectoral, input-output & feasibility
+  v: Survey design, indices & measurement
+  vi: Database processing & integration
+  vii: Academic econometric modeling
+pops:
+  A: Children & early childhood
+  B: Youth
+  C: Women
+  D: Vulnerable populations
+  E: General population & households
+  F: Firms, industries & markets
+  G: Public institutions
+projects:
+- id: project-01
+  employer: Econometría Consultores
+  role: Director
+  role_period: Jan 2025 – Present
+  title: Econometric market projection reports
+  client: Porsche
+  client_slug: porsche
+  bullet: >-
+    Directed the engagement with Porsche from Aug 2025 onward: led the team, served
+    as primary client counterpart, designed the econometric market-projection model
+    and delivered the final reports.
+  themes: ['2']
+  tools: [iii]
+  pops: [F]
+- id: project-02
+  employer: Econometría Consultores
+  role: Director
+  role_period: Jan 2025 – Present
+  title: Semi-annual report & bimonthly newsletter on the Colombian economy
+  client: Banco Patria
+  client_slug: banco-patria
+  bullet: >-
+    Directed the semi-annual report and bimonthly newsletter tracking the Colombian
+    economy for Banco Patria from Jan 2025; led team coordination, client interlocution
+    and final products.
+  themes: ['2']
+  tools: [iii]
+  pops: [E]
+- id: project-03
+  employer: Econometría Consultores
+  role: Quantitative Expert / Consultant
+  role_period: Apr 2025 – Present
+  title: >-
+    Operations & cost-effectiveness evaluation of public childcare ('jardines infantiles')
+  client: Secretaría Distrital de Integración Social (SDIS)
+  client_slug: secretaria-distrital-de-integracion-social
+  bullet: >-
+    Led quantitative work for the operations and cost-effectiveness evaluation of
+    SDIS's public-childcare modalities (Apr 2025 – Present); processed datasets with
+    statistical software, ran the statistical and econometric analysis, and contributed
+    to recommendations on social returns by modality and contract type.
+  themes: ['3']
+  tools: [ii, iv]
+  pops: [A, G]
+- id: project-04
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: >-
+    Perception survey of internal and external users of the Consejo Superior de la
+    Judicatura (2023–2026 cycle)
+  client: Consejo Superior de la Judicatura
+  client_slug: consejo-superior-de-la-judicatura
+  bullet: >-
+    Serving as quantitative expert on a perception survey of internal and external
+    users of Colombia's Consejo Superior de la Judicatura, building on results from
+    the 2023–2026 cycle (2025 – Present); designing the quantitative instruments and
+    leading the survey analysis.
+  themes: ['9']
+  tools: [v, ii]
+  pops: [E, G]
+- id: project-05
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: >-
+    Expert appraisal and rebuttal on the PET price in Cali, in a commercial arbitration
+  client: Fractal (commercial arbitration between private parties)
+  client_slug: fractal
+  bullet: >-
+    Served as quantitative expert in a commercial arbitration involving Fractal (Feb–Apr
+    2026); delivered a critical review of Acoplásticos's price reports and their statistical
+    representativeness, and produced a counter-appraisal to Conexig's expert report
+    on the price of PET in Cali, which was also based on Acoplásticos data.
+  themes: ['7']
+  tools: [ii, iv, v]
+  pops: [F]
+- id: project-06
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: Macroeconomic-variables dashboard for demand projection
+  client: Mondelez
+  client_slug: mondelez
+  bullet: >-
+    Built and maintained a dashboard of macroeconomic variables that feeds Mondelez's
+    monthly demand-projection process (Mar 2025 – Present); led the statistical and
+    econometric work on the underlying indicators.
+  themes: ['2']
+  tools: [iii]
+  pops: [F]
+- id: project-07
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: Cost analysis of UNICEF Venezuela's humanitarian interventions
+  client: UNICEF Venezuela
+  client_slug: unicef-venezuela
+  bullet: >-
+    Served as macroeconomic expert on UNICEF Venezuela's cost analysis of humanitarian
+    interventions (Oct–Dec 2025); analyzed historical costs and designed the financial
+    formulas for a forward-looking costing tool, incorporating local hyperinflation
+    and USD inflation dynamics into the projected unit costs.
+  themes: ['3', '9']
+  tools: [iii, iv, vi]
+  pops: [A, D, G]
+- id: project-08
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: >-
+    Final & impact evaluation of the PROINNOVA business-innovation program (IDB Paraguay)
+  client: Inter-American Development Bank (IDB) – CONACYT Paraguay
+  client_slug: inter-american-development-bank-conacyt-paraguay
+  bullet: >-
+    Served as quantitative expert on the IDB's final and impact evaluation of Paraguay's
+    PROINNOVA business-innovation program executed by CONACYT (Jun–Dec 2025); analyzed
+    firm-level data on participating and control firms using propensity score matching
+    (PSM) and PSM-matched difference-in-differences, and built innovation and productivity
+    indicators including total factor productivity (TFP).
+  themes: ['5']
+  tools: [i, ii, v]
+  pops: [F, G]
+- id: project-09
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: 'Expert appraisal: equilibrium low-price threshold for the thermal coal market'
+  client: Ernst & Young
+  client_slug: ernst-young
+  bullet: >-
+    Served as the quantitative expert estimating the equilibrium low-price threshold
+    for the thermal coal market for EY (Mar–Apr 2025); led client interlocution, processed
+    the datasets and produced the macroeconometric estimates that underpinned the
+    judicial expert appraisal.
+  themes: ['7']
+  tools: [iv, iii]
+  pops: [F]
+- id: project-10
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: Context analysis & baseline of the Colombian banana sector
+  client: GIZ
+  client_slug: giz
+  bullet: >-
+    Built the context analysis and baseline for the Colombian banana sector to support
+    compliance with decent-work and living-wage requirements promoted by German retailers
+    (Jun–Oct 2024, Eco 1010); contributed to methodology design, processed the datasets
+    and led the statistical and econometric analysis.
+  themes: ['6']
+  tools: [ii, iv]
+  pops: [F, D]
+- id: project-11
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: >-
+    CIIU classification & feasibility study for a Homecenter / Constructor store in
+    Pasto
+  client: SODIMAC
+  client_slug: sodimac
+  bullet: >-
+    Coordinated the technical and statistical consultancy for SODIMAC (Apr–Jun 2024):
+    classified its principal economic activity under DANE's CIIU methodology and produced
+    the quantitative case for the viability of opening a Homecenter and Constructor
+    store in Pasto.
+  themes: ['7']
+  tools: [iv, vi]
+  pops: [F]
+- id: project-12
+  employer: Econometría Consultores
+  role: Quantitative / Thematic Expert
+  role_period: Dec 2022 – Present
+  title: Operations & results evaluation of the Cargo Transport Modernization Policy
+  client: Departamento Nacional de Planeación (DNP)
+  client_slug: departamento-nacional-de-planeacion
+  bullet: >-
+    Led the quantitative work for the operations and results evaluation of Colombia's
+    Cargo Transport Modernization Policy for DNP (Dec 2022 – May 2023, Eco 954); guided
+    dataset processing, the statistical analysis and the econometric model, and contributed
+    to the final reports.
+  themes: ['7']
+  tools: [ii, iv]
+  pops: [F, G]
+- id: project-13
+  employer: Econometría Consultores
+  role: Project Coordinator
+  role_period: Jul 2022 – Present
+  title: Formative evaluation of the 'Territorios Amigos de la Niñez' (TAN) strategy
+  client: UNICEF
+  client_slug: unicef
+  bullet: >-
+    Coordinated the formative evaluation of UNICEF Colombia's 'Territorios Amigos
+    de la Niñez' (TAN) strategy — the local adaptation of the global Child Friendly
+    Cities Initiative (CFCI) — assessing effectiveness, relevance and sustainability
+    in priority territories (Eco 998).
+  themes: ['3']
+  tools: [ii]
+  pops: [A, G]
+- id: project-14
+  employer: Econometría Consultores
+  role: Project Coordinator
+  role_period: Jul 2022 – Present
+  title: Market study of the Panamanian postal sector
+  client: Inter-American Development Bank (IDB)
+  client_slug: inter-american-development-bank
+  bullet: >-
+    Coordinated the technical team and client interlocution for an IDB market study
+    of Panama's postal sector (Jul–Dec 2022, Eco 940), characterizing demand and supply,
+    competitive structure and regulatory dynamics through quantitative analysis.
+  themes: ['7']
+  tools: [iv, v]
+  pops: [F]
+- id: project-15
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Quarterly tracking reports on the Colombian economy
+  client: Serrano Martínez
+  client_slug: serrano-martinez
+  bullet: >-
+    Produced the quarterly reports tracking the Colombian economy for Serrano Martínez
+    (Jan 2025 – Present); led client interlocution, processed the datasets, ran the
+    statistical and econometric analysis and contributed to the final products.
+  themes: ['2']
+  tools: [iii]
+  pops: [E]
+- id: project-16
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Macroeconomic analysis & statistics
+  client: Mastercard
+  client_slug: mastercard
+  bullet: >-
+    Delivered macroeconomic analysis and statistics for Mastercard (Oct–Dec 2024,
+    Eco 20021); supported methodology design, guided dataset processing and the econometric
+    model, and contributed to reports and products.
+  themes: ['2']
+  tools: [iii]
+  pops: [E]
+- id: project-17
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: >-
+    Measurement of institutional trust in the Defensoría del Pueblo's mission services
+    (2021–2023)
+  client: Defensoría del Pueblo
+  client_slug: defensoria-del-pueblo
+  bullet: >-
+    Measured institutional trust in the Defensoría del Pueblo's mission services for
+    2021–2023 (Oct–Dec 2023, Eco 984); contributed to methodology design and quantitative
+    implementation, processed the datasets and ran the statistical and econometric
+    analysis.
+  themes: ['9']
+  tools: [ii, v]
+  pops: [E, G]
+- id: project-18
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Randomized impact evaluation (RCT) of the MatematIA platform in CECyTEMs
+  client: UNICEF Mexico (via CEES)
+  client_slug: unicef-mexico
+  bullet: >-
+    Carried out a randomized controlled trial (RCT) evaluating the impact of the MatematIA
+    platform across Mexico's CECyTEMs for UNICEF Mexico (Aug–Oct 2023); supported
+    the experimental design and methodology, processed the datasets and produced the
+    econometric estimates underlying the impact findings.
+  themes: ['4']
+  tools: [i, ii]
+  pops: [A]
+- id: project-19
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: >-
+    Macroeconomic-variables dashboard for demand projection (earlier bimonthly engagement)
+  client: Mondelez
+  client_slug: mondelez
+  bullet: >-
+    Built and maintained a bimonthly macroeconomic-variables dashboard for Mondelez's
+    demand-projection process; processed the underlying datasets and ran the statistical
+    and econometric analysis.
+  themes: ['2']
+  tools: [iii]
+  pops: [F]
+- id: project-20
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Evaluation of the Emprendedoras Bavaria 2023 program
+  client: Bavaria
+  client_slug: bavaria
+  bullet: >-
+    Evaluated Bavaria's Emprendedoras 2023 program (Apr–Dec 2023, Eco 964); supported
+    methodology design and quantitative implementation, processed the datasets and
+    produced the econometric analysis behind the report.
+  themes: ['5']
+  tools: [ii]
+  pops: [C, F]
+- id: project-21
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Operations & results evaluation, '1000 Días para Cambiar el Mundo'
+  client: ICBF
+  client_slug: icbf
+  bullet: >-
+    Designed and conducted the operations and results evaluation of ICBF's '1000 Días
+    para Cambiar el Mundo' early-childhood modality (May–Jun 2022, Eco 936), analyzing
+    processes, components and objectives to recommend improvements.
+  themes: ['3']
+  tools: [ii]
+  pops: [A, C, G]
+- id: project-22
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Child labor study & exploratory forced-labor indicators in the palm oil sector
+  client: Partners of the Americas
+  client_slug: partners-of-the-americas
+  bullet: >-
+    Designed and ran the study of knowledge, attitudes and practices on child labor
+    and exploratory indicators of forced labor in Colombia's palm oil sector (Apr–May
+    2022, Eco 928); processed the datasets and produced the econometric analysis behind
+    the products.
+  themes: ['6']
+  tools: [ii, vi]
+  pops: [D, A, F]
+- id: project-23
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Evaluation of the Emprendedores Pilot Program
+  client: Bavaria
+  client_slug: bavaria
+  bullet: >-
+    Evaluated the pilot of Bavaria's Emprendedores program (full-year 2022, Eco 949);
+    supported methodology design and quantitative implementation, processed the datasets
+    and produced the econometric analysis behind the final report.
+  themes: ['5']
+  tools: [ii, vi]
+  pops: [F]
+- id: project-24
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Design & implementation of the Science & Technology policy for the health
+    sector
+  client: Secretaría Distrital de Salud (SDS)
+  client_slug: secretaria-distrital-de-salud
+  bullet: >-
+    Supported the design and implementation of the Science & Technology (CyT) policy
+    for Bogotá's health sector for the SDS (Jan–Mar 2022, Eco 918); contributed to
+    methodology, processed the datasets and produced the econometric analysis behind
+    the products.
+  themes: ['9']
+  tools: [ii]
+  pops: [G, F]
+- id: project-25
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Macroeconomic effects of the transition to a circular economy in Latin America
+  client: CEPAL (UN-ECLAC)
+  client_slug: cepal
+  bullet: >-
+    Modeled the macroeconomic effects of Latin America's transition to a circular
+    economy for CEPAL (Jun 2021 – Jan 2022, Eco 895); supported methodology design
+    and quantitative implementation, processed the datasets and ran the econometric
+    analysis.
+  themes: ['8']
+  tools: [iii, iv]
+  pops: [E]
+- id: project-26
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Commercial Alliances Program (PAC)
+  client: Fintrac
+  client_slug: fintrac
+  bullet: >-
+    Delivered the quantitative analysis for Fintrac's Commercial Alliances Program
+    (PAC) (May–Jun 2021, Eco 882); supported methodology design, processed the datasets
+    and ran the statistical and econometric analysis behind the products.
+  themes: ['10']
+  tools: [ii]
+  pops: [D, F]
+- id: project-27
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: >-
+    Impact evaluation of the CGR Institutional Strengthening Program (IDB 3593/OC-CO)
+  client: IDB – Contraloría General de la República (CGR)
+  client_slug: idb-contraloria-general-de-la-republica
+  bullet: >-
+    Ran the impact evaluation of Colombia's CGR Institutional Strengthening Program,
+    financed under IDB loan 3593/OC-CO (Nov–Dec 2020, Eco 873); supported methodology
+    and quantitative implementation, processed the datasets and produced the econometric
+    analysis behind the report.
+  themes: ['9']
+  tools: [i, ii]
+  pops: [G]
+- id: project-28
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Demand projection for the new National Navy shipping company
+  client: Armada Nacional de Colombia
+  client_slug: armada-nacional-de-colombia
+  bullet: >-
+    Produced the demand projection for the proposed shipping company under the Colombian
+    National Navy, as part of the general feasibility studies that supported the viability
+    of the new enterprise (Eco 872).
+  themes: ['7']
+  tools: [iii, iv]
+  pops: [F, G]
+- id: project-29
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: >-
+    Accountability & citizen-participation strategy and institutional trust survey
+    for the Defensoría del Pueblo
+  client: Defensoría del Pueblo (IDB-funded Institutional Strengthening Program)
+  client_slug: defensoria-del-pueblo
+  bullet: >-
+    Designed an accountability and citizen-participation strategy and ran the institutional-trust
+    survey for the Defensoría del Pueblo, under its IDB-financed Institutional Strengthening
+    Program (Eco 871).
+  themes: ['9']
+  tools: [ii, v]
+  pops: [E, G]
+- id: project-30
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Evolution & outlook of the communications industry under COVID-19
+  client: Comisión de Regulación de Comunicaciones (CRC)
+  client_slug: comision-de-regulacion-de-comunicaciones
+  bullet: >-
+    Analyzed COVID-19's impact on Colombia's communications industry and forecast
+    its post-pandemic evolution for the CRC (Aug–Nov 2020, Eco 853); supported methodology
+    and quantitative implementation, processed datasets and produced the econometric
+    analysis.
+  themes: ['7']
+  tools: [iii, iv, ii]
+  pops: [F, G]
+- id: project-31
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Monthly macroeconomic & political analysis with sectoral forecasts
+  client: Banco Patria
+  client_slug: banco-patria
+  bullet: >-
+    Produced monthly macroeconomic and political analysis reports with sectoral forecasts
+    for Banco Patria's strategic decision-making (Mar–Aug 2020, Eco 847); supported
+    methodology, processed the datasets and ran the econometric analysis behind the
+    reports.
+  themes: ['2']
+  tools: [iii]
+  pops: [E]
+- id: project-32
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Nutrition study in Nicaragua's Dry Corridor
+  client: Inter-American Development Bank (IDB)
+  client_slug: inter-american-development-bank
+  bullet: >-
+    Conducted the nutrition study in Nicaragua's Dry Corridor for the IDB (Jan–Mar
+    2020, Eco 836); supported methodology design, processed the datasets and produced
+    the econometric analysis behind the products.
+  themes: ['3']
+  tools: [ii, v, vi]
+  pops: [D, A]
+- id: project-33
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Results evaluation of the National Disability Policy (PPDIS)
+  client: Departamento Nacional de Planeación (DNP)
+  client_slug: departamento-nacional-de-planeacion
+  bullet: >-
+    Evaluated results of Colombia's National Disability Policy (PPDIS) for DNP (Dec
+    2019 – Jan 2020, Eco 826); supported methodology and quantitative implementation,
+    processed the datasets and produced the econometric analysis.
+  themes: ['3']
+  tools: [ii, v]
+  pops: [D, G]
+- id: project-34
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Design of a monitoring & follow-up system for OPDAT
+  client: OPDAT (U.S. DOJ)
+  client_slug: opdat
+  bullet: >-
+    Developed the monitoring and follow-up system for OPDAT (Nov 2019 – Jun 2020,
+    Eco 824); supported methodology design and quantitative implementation, processed
+    the datasets and produced the underlying analysis.
+  themes: ['9']
+  tools: [v, vi]
+  pops: [G]
+- id: project-35
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: UNICEF FeA Disability evaluation
+  client: UNICEF
+  client_slug: unicef
+  bullet: >-
+    Carried out UNICEF's FeA Disability evaluation (Jun–Nov 2019, Eco 809); supported
+    methodology design and quantitative implementation, processed the datasets and
+    produced the econometric analysis behind the products.
+  themes: ['3']
+  tools: [ii]
+  pops: [D, A]
+- id: project-36
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Results & impact evaluation, '40.000 Primeros Empleos' program
+  client: Departamento Nacional de Planeación (DNP)
+  client_slug: departamento-nacional-de-planeacion
+  bullet: >-
+    Evaluated the results and impact of Colombia's '40.000 Primeros Empleos' youth-employment
+    program for DNP (Dec 2018 – Oct 2019, Eco 793), measuring effects on beneficiaries
+    and participating firms.
+  themes: ['5']
+  tools: [i, ii]
+  pops: [B, F, G]
+- id: project-37
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: >-
+    RCT sample design for the AWLI program evaluation, Afghanistan (project cancelled
+    mid-term)
+  client: UNICEF
+  client_slug: unicef
+  bullet: >-
+    Designed the sample for the planned randomized controlled trial (RCT) evaluating
+    UNICEF's AWLI (Adolescent Women's Literacy Initiative) program in Afghanistan
+    (Eco 791); the project was cancelled before the implementation phase.
+  themes: ['4']
+  tools: [i, v]
+  pops: [C, A, D]
+- id: project-38
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Comprehensive impact study of the 2015–2017 ICT & TV regulatory framework
+  client: Comisión de Regulación de Comunicaciones (CRC)
+  client_slug: comision-de-regulacion-de-comunicaciones
+  bullet: >-
+    Built a comprehensive impact study of the regulatory framework issued by the CRC
+    for the ICT and television sectors between 2015 and 2017 (Sep–Dec 2018, Eco 784);
+    supported methodology, processed the datasets and produced the econometric analysis.
+  themes: ['7']
+  tools: [ii, iv]
+  pops: [F, G]
+- id: project-39
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Family characterization model for ICBF programs (2016–2017)
+  client: ICBF
+  client_slug: icbf
+  bullet: >-
+    Designed and implemented a family-characterization model and analyzed available
+    data from the ICBF's Family & Communities Directorate care modalities to identify
+    'complex situations' among families served in 2016–2017 (Eco 776).
+  themes: ['3']
+  tools: [ii, v, vi]
+  pops: [E, D, G]
+- id: project-40
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Database integration pilot project
+  client: ALPINA
+  client_slug: alpina
+  bullet: >-
+    Ran the pilot project to integrate ALPINA's databases into outputs and variables
+    supporting business decisions (Apr–Oct 2018, Eco 769); supported methodology,
+    processed the datasets and produced the econometric analysis.
+  themes: ['2']
+  tools: [vi, ii]
+  pops: [F]
+- id: project-41
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: >-
+    Impact & results evaluation of the 'Leer es mi cuento' National Reading & Writing
+    Plan
+  client: Departamento Nacional de Planeación (DNP)
+  client_slug: departamento-nacional-de-planeacion
+  bullet: >-
+    Evaluated the impact and results of Colombia's 'Leer es mi cuento' National Reading
+    & Writing Plan for DNP (Mar–Jul 2018, Eco 750); supported methodology design and
+    quantitative implementation, processed the datasets and produced the econometric
+    analysis.
+  themes: ['4']
+  tools: [i, ii]
+  pops: [A, G]
+- id: project-42
+  employer: Econometría Consultores
+  role: Consultant
+  role_period: Mar 2018 – Present
+  title: Support to Fundación Alpina in new-project formulation & information processing
+  client: Fundación Alpina
+  client_slug: fundacion-alpina
+  bullet: >-
+    Supported Fundación Alpina in formulating new social and rural-development projects
+    and processing the underlying information (Jun 2018 – Jun 2019, Eco 703); contributed
+    to methodology design, processed the datasets and ran the econometric analysis
+    behind the products.
+  themes: ['3', '10']
+  tools: [ii, vi]
+  pops: [D, A]
+- id: project-43
+  employer: Idemia SAS
+  role: Macroeconomics Expert
+  role_period: Nov 2022 – Mar 2023
+  title: Impact analysis of the new Colombian government's proposals on IDEMIA operations
+  client: IDEMIA
+  client_slug: idemia
+  bullet: >-
+    Conducted the macroeconomic impact analysis of the new Colombian government's
+    policy proposals on IDEMIA's operations in the country (Nov 2022 – Mar 2023);
+    supported methodology design and quantitative implementation, guided dataset processing
+    and the econometric model behind the analysis.
+  themes: ['2']
+  tools: [iii, ii]
+  pops: [F]
+- id: project-44
+  employer: Banco de la República (Central Bank of Colombia)
+  role: Research Assistant — Research Unit
+  role_period: Jan 2017 – Dec 2017
+  title: Volatility spillovers & the global financial cycle (Gómez-Pineda, 2020)
+  client: Economic Modelling (journal)
+  client_slug: economic-modelling
+  bullet: >-
+    Supported the global semi-structural model used to identify volatility spillovers
+    across economies; published in Economic Modelling.
+  themes: ['1']
+  tools: [vii, iii]
+  pops: [E]
+- id: project-45
+  employer: Banco de la República (Central Bank of Colombia)
+  role: Research Assistant — Research Unit
+  role_period: Jan 2017 – Dec 2017
+  title: A well-timed raise in inflation target (Gómez, 2018)
+  client: Borradores de Economía No. 1042
+  client_slug: borradores-de-economia-no-1042
+  bullet: >-
+    Assisted simulation and calibration work for a study on inflation-target re-anchoring;
+    published as Borradores de Economía No. 1042.
+  themes: ['1']
+  tools: [vii, iii]
+  pops: [E]
+- id: project-46
+  employer: Banco de la República (Central Bank of Colombia)
+  role: Research Assistant — Research Unit
+  role_period: Jan 2017 – Dec 2017
+  title: Sticky-price inflation in Colombia (Julio, Gómez & Hernández, 2017)
+  client: Borradores de Economía No. 1007
+  client_slug: borradores-de-economia-no-1007
+  bullet: >-
+    Contributed to the empirical analysis of sticky-price inflation dynamics in Colombia.
+  themes: ['1']
+  tools: [vii, iii]
+  pops: [E]
