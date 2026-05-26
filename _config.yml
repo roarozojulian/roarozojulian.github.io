@@ -1,6 +1,6 @@
 title: "Julián Roa-Rozo"
-author: "Blog Author"
-description: "Personal webpage"
+author: "Julián Roa-Rozo"
+description: "Research economist specializing in macroeconomics, public policy and econometrics."
 permalink: /:title/
 lang: "en"
 excerpt_separator: "\n\n\n"
@@ -9,27 +9,28 @@ date_format: "%B %d, %Y"
 # Layout
 
 show_excerpts: false        # show article excerpts on the home page
-show_frame: true           # adds a gray frame to the site
-show_sidebar: false        # show a sidebar instead of the usual header
-minimal: false             # use a dark header
+show_frame: true            # adds a gray frame to the site
+show_sidebar: false         # show a sidebar instead of the usual header
+minimal: false              # use a dark header
 
 # Menu
 
-navigation:                # accepts {file, title, url, icon, sidebaricon}
-  - {url: "https://roarozojulian.github.io/files/JulianRoaRozoCV.pdf", target="_blank" , title: "CV"}
+navigation:                 # accepts {file, title, url, icon, sidebaricon}
+  - {url: "/files/JulianRoaRozoCV.pdf", title: "CV"}
   - {file: "Research.html", title: "Research"}
   - {file: "Consultancy.html", title: "Evidence-based consultancy"}
   - {file: "Press.html", title: "Press articles"}
   - {file: "Outputgaps.html", title: "Output gaps data"}
 
-external:                  # shows a footer with social links - for available icons see fontawesome.com/icons
+external:                   # shows a footer with social links - for available icons see fontawesome.com/icons
   - {title: Mail, icon: envelope, url: "mailto:julian.roa.rozo.95@gmail.com"}
-  - {title: Github, icon: github, url: "https://roarozojulian.github.io/"}
+  # TODO: replace with your real GitHub URL when ready, then uncomment
+  # - {title: Github, icon: github, url: "https://github.com/YOUR_HANDLE"}
   - {title: Twitter, icon: twitter, url: "https://twitter.com/rrjulian95"}
 
 comments:
-#  disqus_shortname: ""    # see https://disqus.com/
-#  isso_domain: ""         # see https://posativ.org/isso/
+#  disqus_shortname: ""     # see https://disqus.com/
+#  isso_domain: ""          # see https://posativ.org/isso/
 
 remote_theme: niklasbuschmann/contrast@v2.11
 
