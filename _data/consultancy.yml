@@ -139,7 +139,7 @@ projects:
   role_period: Dec 2022 – Present
   title: Cost analysis of UNICEF Venezuela's humanitarian interventions
   client: UNICEF Venezuela
-  client_slug: unicef-venezuela
+  client_slug: unicef
   bullet: >-
     Served as macroeconomic expert on UNICEF Venezuela's cost analysis of humanitarian
     interventions (Oct–Dec 2025); analyzed historical costs and designed the financial
@@ -155,7 +155,7 @@ projects:
   title: >-
     Final & impact evaluation of the PROINNOVA business-innovation program (IDB Paraguay)
   client: Inter-American Development Bank (IDB) – CONACYT Paraguay
-  client_slug: inter-american-development-bank-conacyt-paraguay
+  client_slug: conacyt-paraguay
   bullet: >-
     Served as quantitative expert on the IDB's final and impact evaluation of Paraguay's
     PROINNOVA business-innovation program executed by CONACYT (Jun–Dec 2025); analyzed
@@ -307,7 +307,7 @@ projects:
   role_period: Mar 2018 – Present
   title: Randomized impact evaluation (RCT) of the MatematIA platform in CECyTEMs
   client: UNICEF Mexico (via CEES)
-  client_slug: unicef-mexico
+  client_slug: unicef
   bullet: >-
     Carried out a randomized controlled trial (RCT) evaluating the impact of the MatematIA
     platform across Mexico's CECyTEMs for UNICEF Mexico (Aug–Oct 2023); supported
