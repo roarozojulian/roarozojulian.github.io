@@ -316,6 +316,7 @@
   image: "Stickyprices.png"
   topics: ["Inflation"]
   venue: "Vox-EU"
+  coauthors: "Javier G. Gómez Pineda & Juan Manuel Julio"
   summary: >
     Sticky-price inflation is inflation in the CPI components with infrequent price
     changes — where price setters are typically more forward looking. A look at
