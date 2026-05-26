@@ -8,7 +8,7 @@
 #   role_period  : date range of the role
 #   title        : project name
 #   client       : end client / counterpart
-#   client_slug  : logo filename → /files/logos/<slug>.png (falls back to name)
+#   client_slug  : logo filename → /files/<slug>.png (falls back to name)
 #   bullet       : description of what you did
 #   themes       : list of theme codes (see themes: taxonomy above)
 #   tools        : list of tool codes (see tools: taxonomy above)
