@@ -44,7 +44,7 @@ pops:
 projects:
 - id: project-01
   employer: Econometría Consultores
-  role: Director
+  role: Project Director
   role_period: Jan 2025 – Present
   title: Econometric market projection reports
   client: Porsche
@@ -58,7 +58,7 @@ projects:
   pops: [F]
 - id: project-02
   employer: Econometría Consultores
-  role: Director
+  role: Project Director
   role_period: Jan 2025 – Present
   title: Semi-annual report & bimonthly newsletter on the Colombian economy
   client: Banco Patria
