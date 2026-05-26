@@ -227,6 +227,33 @@ backgroundcolor: white
     margin: 0 0 0.8rem;
     text-align: justify;
   }
+
+  /* -------- Population row (icon + tiny label) -------- */
+  .consultancy .c-pops {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem 1.1rem;
+    margin: 0 0 0.85rem;
+    padding: 0.55rem 0;
+    border-top: 1px dashed var(--c-rule);
+    border-bottom: 1px dashed var(--c-rule);
+  }
+  .consultancy .c-pop {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: var(--c-ink-soft);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  .consultancy .c-pop svg {
+    width: 0.95em;
+    height: 0.95em;
+    fill: var(--c-accent);
+    flex-shrink: 0;
+  }
   .consultancy .c-card-tags {
     display: flex;
     flex-wrap: wrap;
@@ -330,10 +357,11 @@ backgroundcolor: white
         data-tools="{{ p.tools | join: ' ' }}">
       <div class="c-logo">
         {% if p.client_slug != "" %}
-          <img src="{{ '/files/logos/' | append: p.client_slug | append: '.png' | relative_url }}"
+          <img src="{{ '/files/' | append: p.client_slug | append: '.png' | relative_url }}"
                alt="{{ p.client }}"
                loading="lazy"
-               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'c-logo-fallback',textContent:this.alt}))">
+               data-base="{{ '/files/' | append: p.client_slug | relative_url }}"
+               onerror="logoFallback(this)">
         {% else %}
           <span class="c-logo-fallback">{{ p.client }}</span>
         {% endif %}
@@ -342,6 +370,31 @@ backgroundcolor: white
         <div class="c-card-client">{{ p.client }}</div>
         <h3 class="c-card-title">{{ p.title }}</h3>
         <div class="c-card-meta">{{ p.role }} · {{ p.employer }} · {{ p.role_period }}</div>
+
+        {% comment %} ===== Population row (icons + tiny labels) ===== {% endcomment %}
+        {% assign pop_icons = "A|child,B|user-graduate,C|venus,D|hands-helping,E|home,F|industry,G|landmark" | split: "," %}
+        {% if p.pops.size > 0 %}
+        <div class="c-pops" aria-label="Populations served">
+          {% for code in p.pops %}
+            {% assign label = site.data.consultancy.pops[code] %}
+            {% if label %}
+              {% assign icon_name = "" %}
+              {% for pair in pop_icons %}
+                {% assign parts = pair | split: "|" %}
+                {% if parts[0] == code %}{% assign icon_name = parts[1] %}{% endif %}
+              {% endfor %}
+              <span class="c-pop" title="{{ label }}">
+                {% if icon_name != "" %}
+                  {% assign svg = site.data.font-awesome.icons[icon_name].svg.solid %}
+                  <svg viewBox="0 0 {{ svg.width }} {{ svg.height }}" aria-hidden="true"><path d="{{ svg.path }}"/></svg>
+                {% endif %}
+                {{ label }}
+              </span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
         <p class="c-card-bullet">{{ p.bullet }}</p>
         <div class="c-card-tags">
           {% for code in p.themes %}
@@ -363,6 +416,24 @@ backgroundcolor: white
 </article>
 
 <script>
+// Logo loader: try .png → .jpeg → .jpg → text fallback.
+// Defined globally so the inline onerror="logoFallback(this)" can reach it.
+function logoFallback(img) {
+  const exts = ['png', 'jpeg', 'jpg'];
+  const tried = (img.dataset.tried || 'png').split(',');
+  const next = exts.find(e => !tried.includes(e));
+  if (next) {
+    tried.push(next);
+    img.dataset.tried = tried.join(',');
+    img.src = img.dataset.base + '.' + next;
+  } else {
+    img.replaceWith(Object.assign(document.createElement('span'), {
+      className: 'c-logo-fallback',
+      textContent: img.alt
+    }));
+  }
+}
+
 (function () {
   const cards       = document.querySelectorAll('.consultancy .c-card');
   const themePills  = document.querySelectorAll('.consultancy [data-axis="theme"] .c-pill');
