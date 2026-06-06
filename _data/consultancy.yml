@@ -48,7 +48,7 @@ projects:
   role_period: Jan 2025 – Present
   title: Econometric market projection reports
   client: Porsche
-  client_slug: porsche
+  client_slug: porsche-colombia
   bullet: >-
     Directed the engagement with Porsche from Aug 2025 onward: led the team, served
     as primary client counterpart, designed the econometric market-projection model
@@ -62,7 +62,7 @@ projects:
   role_period: Jan 2025 – Present
   title: Semi-annual report & bimonthly newsletter on the Colombian economy
   client: Banco Patria
-  client_slug: banco-patria
+  client_slug: Banco-Patria
   bullet: >-
     Directed the semi-annual report and bimonthly newsletter tracking the Colombian
     economy for Banco Patria from Jan 2025; led team coordination, client interlocution
@@ -337,7 +337,7 @@ projects:
   role_period: Mar 2018 – Present
   title: Evaluation of the Emprendedoras Bavaria 2023 program
   client: Bavaria
-  client_slug: bavaria
+  client_slug: Bavaria
   bullet: >-
     Evaluated Bavaria's Emprendedoras 2023 program (Apr–Dec 2023, Eco 964); supported
     methodology design and quantitative implementation, processed the datasets and
@@ -380,7 +380,7 @@ projects:
   role_period: Mar 2018 – Present
   title: Evaluation of the Emprendedores Pilot Program
   client: Bavaria
-  client_slug: bavaria
+  client_slug: Bavaria
   bullet: >-
     Evaluated the pilot of Bavaria's Emprendedores program (full-year 2022, Eco 949);
     supported methodology design and quantitative implementation, processed the datasets
@@ -500,7 +500,7 @@ projects:
   role_period: Mar 2018 – Present
   title: Monthly macroeconomic & political analysis with sectoral forecasts
   client: Banco Patria
-  client_slug: banco-patria
+  client_slug: Banco-Patria
   bullet: >-
     Produced monthly macroeconomic and political analysis reports with sectoral forecasts
     for Banco Patria's strategic decision-making (Mar–Aug 2020, Eco 847); supported
