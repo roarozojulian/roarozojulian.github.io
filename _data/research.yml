@@ -1,12 +1,10 @@
 # _data/research.yml
 # Papers grouped by `type` (peer-reviewed, book-chapter, working-paper).
-# Set `featured: true` on exactly one paper — it will be rendered large in the
-# dark band at the top of the page.
+# All papers render as equal cards in their section — no featured treatment.
 #
 # Fields:
 #   id          : unique slug, used as the modal anchor (matches data-modal=...)
 #   type        : peer-reviewed | book-chapter | working-paper
-#   featured    : true on exactly one entry
 #   title       : paper title
 #   image       : filename relative to /files/
 #   alt         : image alt text
@@ -19,12 +17,11 @@
 
 - id: paper-hysteresis-potential-output
   type: peer-reviewed
-  featured: true
   title: "Is there hysteresis in potential output estimates?"
   image: "GraphEconomicsLetters.png"
   alt: "IMF's and OECD's real time output gap estimates"
   meta: "Economics Letters · 2024"
-  url: "https://www.sciencedirect.com/science/article/abs/pii/S0165176523004925"
+  url: "/files/BlindedManuscript_13112023_Revised.pdf"
   description: >
     Using an error correction model, this paper studies the dynamics of GDP and
     potential GDP using OECD's Economic Outlook and IMF's World Economic Outlook
@@ -49,6 +46,55 @@
     - The hysteresis elasticity is around 0.28, which is sizeable.
     - These hysteresis effects are higher on OECD's than IMF's estimates.
     - The results can be interpreted as a failure of the natural rate hypothesis.
+
+- id: paper-cross-country-hysteresis
+  type: peer-reviewed
+  title: "Cross-country heterogeneity in potential-GDP and NAIRU hysteresis: A Bayesian approach"
+  image: "FigureMeta_1.jpg"
+  alt: "Random-effects meta-analysis of potential-GDP and NAIRU hysteresis elasticities across 30 economies, and the GDP and unemployment responses they imply"
+  meta: "Forthcoming at Journal of Economic Dynamics and Control · 2026"
+  url: "/files/CrossCountryHeterogeneity_Website.pdf"
+  description: >
+    I extend the semi-structural New Keynesian framework to estimate the potential
+    GDP and NAIRU hysteresis elasticities jointly, by Bayesian methods, for 30
+    economies. The cross-country averages are 0.46 and 0.40 respectively, implying
+    that 0.63 of a temporary demand shock remains in GDP after ten years. Panel
+    local projections show that employment and capital respond persistently to
+    demand shocks while measured TFP does not, consistent with accumulation-based
+    channels rather than TFP channels.
+  abstract: >
+    This paper extends the semi-structural New Keynesian framework to estimate
+    the potential GDP hysteresis elasticity (η) and the NAIRU hysteresis
+    elasticity (ηu) jointly, by Bayesian methods, for 30 economies. The
+    cross-country averages are 0.46 for η and 0.40 for ηu, implying that 0.63
+    of a temporary demand shock remains in GDP after ten years. Regarding ηu,
+    its cross-country variation is high (0.04 in Iceland and 0.73 in Portugal)
+    and seems to be higher in economies with stricter employment protection laws
+    and in economies whose monetary policy spent longer at its lower bound.
+    Cross-country heterogeneity of η is smaller in statistical terms but
+    economically material (0.25 in Korea and 0.71 in Spain), and none of the
+    structural characteristics considered accounts for it. Allowing for positive
+    hysteresis elasticities yields measured output gaps that are smaller and
+    less persistent. Using the identified demand shocks, local projections show
+    that employment and capital respond persistently to demand shocks while
+    measured TFP does not, a pattern consistent with accumulation-based
+    mechanisms rather than TFP channels. These findings imply that the costs of
+    recessions and aggressive disinflation are substantially higher than
+    conventional frameworks suggest.
+  keywords:
+    - Hysteresis
+    - Business cycle
+    - Bayesian methods
+    - Kalman filter
+    - Potential GDP
+    - NAIRU
+  highlights:
+    - First country-specific estimates of both the potential-GDP (η) and NAIRU (ηu) hysteresis elasticities for 30 economies, estimated jointly by Bayesian methods.
+    - Cross-country averages are η = 0.46 and ηu = 0.40, so 0.63 of a temporary demand shock still remains in GDP after ten years; a 100 bp monetary tightening leaves GDP about 0.64% below baseline at that horizon.
+    - Both elasticities are higher in Europe than in the rest of the sample (η = 0.50 vs 0.38; ηu = 0.48 vs 0.24), reproducing a long-standing stylized fact with a new method.
+    - Local projections on the identified demand shocks show persistent responses of employment and capital but only transitory TFP effects, consistent with accumulation-based hysteresis rather than endogenous-TFP channels.
+    - Unemployment hysteresis is higher in economies with stricter employment protection and in those whose policy rate spent longer at the effective lower bound; the usual insider-power proxies (union density, bargaining coverage, labour share) are not associated with it.
+    - Allowing for hysteresis delivers output-gap estimates that are smaller and less persistent than official IMF/OECD series, without the pre-crisis boom these record before 2008.
 
 - id: paper-hysteresis-acce
   type: book-chapter
