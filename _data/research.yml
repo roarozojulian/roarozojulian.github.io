@@ -1,22 +1,25 @@
 # _data/research.yml
 # Papers grouped by `type` (peer-reviewed, book-chapter, working-paper).
-# All papers render as equal cards in their section — no featured treatment.
+# Within each section, papers are sorted automatically by `year` descending
+# (newest first) — no need to maintain the file in any particular order.
 #
 # Fields:
-#   id          : unique slug, used as the modal anchor (matches data-modal=...)
+#   id          : unique slug, used as the modal anchor
 #   type        : peer-reviewed | book-chapter | working-paper
+#   year        : integer used for sorting (newest first)
 #   title       : paper title
 #   image       : filename relative to /files/
-#   alt         : image alt text
+#   alt         : image alt text (also used as lightbox caption)
 #   meta        : free-form meta line (venue, coauthors, year)
 #   url         : link to the paper
 #   description : the short blurb shown on the card
-#   abstract    : longer text shown in the modal
+#   abstract    : longer text shown in the Details modal
 #   keywords    : array of keyword pills (modal)
 #   highlights  : array of bullet points (modal); leave empty to hide section
 
 - id: paper-hysteresis-potential-output
   type: peer-reviewed
+  year: 2024
   title: "Is there hysteresis in potential output estimates?"
   image: "GraphEconomicsLetters.png"
   alt: "IMF's and OECD's real time output gap estimates"
@@ -49,6 +52,7 @@
 
 - id: paper-cross-country-hysteresis
   type: peer-reviewed
+  year: 2026
   title: "Cross-country heterogeneity in potential-GDP and NAIRU hysteresis: A Bayesian approach"
   image: "FigureMeta_1.jpg"
   alt: "Random-effects meta-analysis of potential-GDP and NAIRU hysteresis elasticities across 30 economies, and the GDP and unemployment responses they imply"
@@ -98,6 +102,7 @@
 
 - id: paper-hysteresis-acce
   type: book-chapter
+  year: 2021
   title: "Hysterical but Convergent: The behavior of Colombia's Unemployment Rates"
   image: "LibroACCE.png"
   alt: "Unemployment rates in Colombia, 1984-2017"
@@ -135,6 +140,7 @@
 
 - id: paper-trend-cycle-decomposition
   type: working-paper
+  year: 2023
   title: "A trend-cycle decomposition with hysteresis"
   image: "Figura3.jpg"
   alt: "Euro Area trend GDP under hysteresis"
@@ -172,6 +178,7 @@
 
 - id: paper-monetary-spillovers
   type: working-paper
+  year: 2021
   title: "Spillovers of unconventional monetary policy from advanced economies to Latin America"
   image: "TesisUMP3.png"
   alt: "Monetary policy and shadow rates for advanced economies"
