@@ -1,332 +1,61 @@
 ---
-layout: default
+layout: page
 title: "Research"
-permalink: /Research/
 backgroundcolor: white
 ---
 
-<!-- Fraunces display font (PT Sans loaded site-wide) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 
-<style>
-  /* =========================================================
-     Research page — styles scoped under .research-page so they
-     don't collide with the existing .research-card / .research-modal
-     CSS in _sass/classes.sass (which we still rely on for the modals).
-     ========================================================= */
-  .research-page {
-    --r-ink:         #0F1419;
-    --r-ink-soft:    #3B4452;
-    --r-navy:        #0A2540;
-    --r-accent:      #B8651B;
-    --r-muted:       #7E8B8E;
-    --r-paper:       #FAF9F7;
-    --r-rule:        rgba(15, 20, 25, 0.09);
-    --r-rule-strong: rgba(15, 20, 25, 0.18);
-    --r-dark:        #0A0E13;
-    --r-dark-soft:   rgba(255, 255, 255, 0.72);
-    --r-display:     "Fraunces", Georgia, serif;
-    position: relative;
-  }
-  .research-page::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: radial-gradient(circle, rgba(15, 20, 25, 0.045) 1px, transparent 1px);
-    background-size: 26px 26px;
-    pointer-events: none;
-    z-index: 0;
-  }
-  .research-page > * { position: relative; z-index: 1; }
+<section class="research-section">
+  <h2 class="research-section-title">Peer-reviewed publications</h2>
 
-  /* -------- Page header -------- */
-  .research-page .r-eyebrow {
-    font-size: 0.78rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--r-accent);
-    font-weight: 700;
-    margin: 0 0 0.9rem;
-  }
-  .research-page h1.r-title {
-    font-family: var(--r-display);
-    font-weight: 600;
-    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    color: var(--r-ink);
-    margin: 0 0 1.1rem;
-  }
-  .research-page .r-title a { color: inherit; text-decoration: none; box-shadow: none; }
-  .research-page .r-rule {
-    width: 64px;
-    height: 3px;
-    background: var(--r-accent);
-    margin: 0 0 1.8rem;
-    border: 0;
-  }
-  .research-page .r-intro {
-    max-width: 44rem;
-    color: var(--r-ink-soft);
-    line-height: 1.7;
-    margin: 0 0 2.5rem;
-    text-align: left;
-  }
-
-  /* -------- Buttons -------- */
-  .research-page a.r-btn {
-    display: inline-block;
-    padding: 0.5em 1em;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border: 1.5px solid var(--r-navy);
-    color: var(--r-navy);
-    border-radius: 3px;
-    text-decoration: none;
-    transition: all 0.15s;
-    box-shadow: none;
-    cursor: pointer;
-  }
-  .research-page a.r-btn:hover {
-    background: var(--r-navy);
-    color: #FFF;
-    text-decoration: none;
-  }
-  .research-page a.r-btn.accent { border-color: var(--r-accent); color: var(--r-accent); }
-  .research-page a.r-btn.accent:hover { background: var(--r-accent); color: #FFF; }
-  .research-page .r-btn-row { display: flex; gap: 0.55rem; flex-wrap: wrap; margin-top: 0.6rem; }
-
-  /* -------- Section header -------- */
-  .research-page .r-section {
-    margin: 3.5rem 0 0;
-  }
-  .research-page .r-section:first-of-type {
-    margin-top: 1rem;
-  }
-  .research-page .r-section-header {
-    border-bottom: 1px solid var(--r-rule);
-    padding-bottom: 0.8rem;
-    margin-bottom: 1rem;
-  }
-  .research-page .r-section h2.r-section-title {
-    font-family: var(--r-display);
-    font-weight: 600;
-    font-size: clamp(1.6rem, 3vw, 2rem);
-    letter-spacing: -0.015em;
-    color: var(--r-ink);
-    margin: 0;
-    line-height: 1.1;
-  }
-
-  /* -------- Cards -------- */
-  .research-page .r-list { margin: 0; padding: 0; list-style: none; }
-  .research-page .r-card {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--r-rule);
-    align-items: start;
-    list-style: none;
-  }
-  .research-page .r-card:last-child { border-bottom: none; }
-
-  .research-page .r-thumb {
-    background: var(--r-paper);
-    border: 1px solid var(--r-rule);
-    border-radius: 3px;
-    padding: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    cursor: pointer;
-    transition: opacity 0.15s;
-    margin: 0;
-  }
-  .research-page .r-thumb:hover { opacity: 0.85; }
-  .research-page .r-thumb img {
-    max-height: 100%;
-    max-width: 100%;
-    object-fit: contain;
-    margin: 0;
-    border-radius: 0;
-  }
-
-  .research-page .r-card-body { min-width: 0; }
-  .research-page .r-card-meta {
-    font-size: 0.83rem;
-    color: var(--r-accent);
-    font-style: italic;
-    margin-bottom: 0.5rem;
-  }
-  .research-page .r-card-title {
-    font-family: var(--r-display);
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 1.25;
-    letter-spacing: -0.012em;
-    color: var(--r-ink);
-    margin: 0 0 0.7rem;
-  }
-  .research-page .r-card-title a {
-    color: inherit;
-    box-shadow: none;
-    text-decoration: none;
-  }
-  .research-page .r-card-title a:hover { color: var(--r-accent); text-decoration: none; }
-  .research-page .r-card-desc {
-    color: var(--r-ink-soft);
-    font-size: 0.95rem;
-    line-height: 1.65;
-    margin: 0;
-    text-align: justify;
-  }
-
-  @media (max-width: 720px) {
-    .research-page .r-featured-inner { grid-template-columns: 1fr; gap: 1.8rem; }
-    .research-page .r-featured-image { order: -1; }
-    .research-page .r-card { grid-template-columns: 1fr; gap: 1rem; }
-    .research-page .r-thumb { aspect-ratio: 16 / 9; }
-  }
-
-  /* Hide highlights section in modal when empty (we render a sentinel class) */
-  .research-modal-section.is-empty { display: none; }
-</style>
-
-<article class="research-page">
-
-  <!-- ========= Page header ========= -->
-  <div class="r-eyebrow">Publications · 2021 – 2024</div>
-  <h1 class="r-title"><a href="{{ page.url | relative_url }}">{{ page.title }}</a></h1>
-  <hr class="r-rule">
-  <p class="r-intro">
-    My research focuses on macroeconomics, with two main strands: <strong>GDP and
-    unemployment hysteresis</strong>, and <strong>monetary policy spillovers to
-    Latin American economies</strong>. The papers below span peer-reviewed
-    publications, book chapters, and working papers. Click any image to read the
-    abstract, keywords, and highlights.
-  </p>
-
-  <!-- ========= Sections (peer-reviewed → book chapters → working papers) ========= -->
-  {% assign type_order = "peer-reviewed|Peer-reviewed publications,book-chapter|Book chapters,working-paper|Working papers" | split: "," %}
-  {% for entry in type_order %}
-    {% assign parts = entry | split: "|" %}
-    {% assign t = parts[0] %}
-    {% assign label = parts[1] %}
-    {% assign group = site.data.research | where: "type", t %}
-    {% if group.size > 0 %}
-    <section class="r-section">
-      <div class="r-section-header">
-        <h2 class="r-section-title">{{ label }}</h2>
-      </div>
-      <ul class="r-list">
-        {% for p in group %}
-        <li class="r-card">
-          <div class="r-thumb" data-modal="{{ p.id }}" tabindex="0" role="button" aria-label="View details: {{ p.title }}">
-            <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}" loading="lazy">
-          </div>
-          <div class="r-card-body">
-            <div class="r-card-meta">{{ p.meta }}</div>
-            <h3 class="r-card-title"><a data-modal="{{ p.id }}" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a></h3>
-            <p class="r-card-desc">{{ p.description }}</p>
-            <div class="r-btn-row">
-              <a class="r-btn" href="{{ p.url }}" target="_blank" rel="noopener">Read paper →</a>
-              <a class="r-btn accent" data-modal="{{ p.id }}" href="#{{ p.id }}">Details</a>
-            </div>
-          </div>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-    {% endif %}
-  {% endfor %}
-
-</article>
-
-<!-- ========= Modals (one per paper, using existing .research-modal-* CSS) ========= -->
-{% for p in site.data.research %}
-<div class="research-modal" id="{{ p.id }}">
-  <div class="research-modal-overlay" data-close></div>
-  <div class="research-modal-content">
-    <button class="research-modal-close" data-close>&times;</button>
-    <img class="research-modal-image" src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
-    <h2 class="research-modal-title">{{ p.title }}</h2>
-    <div class="research-modal-meta">{{ p.meta }}</div>
-
-    <div class="research-modal-section">
-      <h3>Abstract</h3>
-      <p>{{ p.abstract }}</p>
+  <article class="research-card">
+    <a href="/files/CrossCountryHeterogeneity_Website.pdf">
+      <img class="research-card-image" src="/files/FigureMeta_1.jpg" alt="Random-effects meta-analysis of hysteresis elasticities across 30 economies">
+    </a>
+    <div class="research-card-body">
+      <a class="research-card-title" href="/files/CrossCountryHeterogeneity_Website.pdf">Cross-country heterogeneity in potential-GDP and NAIRU hysteresis: A Bayesian approach</a>
+      <div class="research-card-meta">Journal of Economic Dynamics and Control, forthcoming</div>
+      <p class="research-card-desc">This paper extends the semi-structural New Keynesian framework to estimate the potential GDP hysteresis elasticity (η) and the NAIRU hysteresis elasticity (ηu) jointly, by Bayesian methods, for 30 economies. The cross-country averages are 0.46 for η and 0.40 for ηu, implying that 0.63 of a temporary demand shock remains in GDP after ten years. Cross-country variation in ηu is high and seems to be higher in economies with stricter employment protection laws and in economies whose monetary policy spent longer at its lower bound. Local projections on the identified demand shocks show that employment and capital respond persistently to demand shocks while measured TFP does not, a pattern consistent with accumulation-based mechanisms rather than TFP channels. These findings imply that the costs of recessions and aggressive disinflation are substantially higher than conventional frameworks suggest.</p>
     </div>
+  </article>
 
-    {% if p.keywords.size > 0 %}
-    <div class="research-modal-section">
-      <h3>Keywords</h3>
-      <div class="research-modal-keywords">
-        {% for k in p.keywords %}<span class="research-keyword">{{ k }}</span>{% endfor %}
-      </div>
+  <article class="research-card">
+    <a href="/files/BlindedManuscript_13112023_Revised.pdf">
+      <img class="research-card-image" src="/files/GraphEconomicsLetters.png" alt="IMF's and OECD's real time output gap estimates">
+    </a>
+    <div class="research-card-body">
+      <a class="research-card-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0165176523004925">Is there hysteresis in potential output estimates?</a>
+      <div class="research-card-meta">Economics Letters, 2024</div>
+      <p class="research-card-desc">Using an error correction model, this paper studies the dynamics of GDP and potential GDP using OECD's Economic Outlook and IMF's World Economic Outlook estimates of the output gap. The findings suggest the presence of hysteresis, implying that short-run shocks to GDP have sizeable permanent effects on potential GDP.</p>
     </div>
-    {% endif %}
+  </article>
 
-    {% if p.highlights.size > 0 %}
-    <div class="research-modal-section">
-      <h3>Highlights</h3>
-      <ul>
-        {% for h in p.highlights %}<li>{{ h }}</li>{% endfor %}
-      </ul>
+</section>
+
+
+<section class="research-section">
+  <h2 class="research-section-title">Working papers</h2>
+
+  <article class="research-card">
+    <a href="REPLACE_WITH_PDF_URL">
+      <img class="research-card-image" src="/files/Figura3.jpg" alt="Euro Area trend GDP under hysteresis">
+    </a>
+    <div class="research-card-body">
+      <a class="research-card-title" href="https://repositorio.banrep.gov.co/server/api/core/bitstreams/694b3c43-13c8-4964-bfb1-1722c096cebd/content">A trend-cycle decomposition with hysteresis</a>
+      <div class="research-card-meta">With Javier Gómez-Pineda · Borradores de Economía</div>
+      <p class="research-card-desc">The business cycle is the cycle in the output gap and also in a stationary measure of trend output. Both the output gap and trend output are driven by joint trend-cycle shocks. The model is a univariate trend-cycle decomposition with hysteresis in trend output that enables the estimation of the output gap and trend output in 81 economies in quarterly frequency, since 1995Q1; and 184 economies in yearly frequency, in several cases since 1950, and in a few cases since 1820. Volatility and dispersion, as well as the frequency of large joint trend-cycle shocks, were low during the Gilded Age period; high during the interwar period, even more so in advanced (AD) economies compared to emerging market and developing economies (EMDE); and low in AD economies and high in EMDE economies in the post WWII period. In contrast with other existing estimates of trend output, those from the trend-cycle decomposition with hysteresis do not evolve smoothly, do not result in an artificial boom before recessions and are less sensitive to new data..</p>
     </div>
-    {% endif %}
+  </article>
 
-    <a class="research-modal-pdf" href="{{ p.url }}" target="_blank" rel="noopener">Read the full paper →</a>
-  </div>
-</div>
-{% endfor %}
+  <article class="research-card">
+    <a href="https://repositorio.uniandes.edu.co/server/api/core/bitstreams/08e54136-a37d-490e-982d-baf0ef38b819/content">
+      <img class="research-card-image" src="/files/Contrafacual_US_LY_english.png" alt="GDP contraction of about 4% from not implementing UMP from 2008 to 2014">
+    </a>
+    <div class="research-card-body">
+      <a class="research-card-title" href="https://repositorio.uniandes.edu.co/server/api/core/bitstreams/08e54136-a37d-490e-982d-baf0ef38b819/content">Spillovers of unconventional monetary policy from advanced economies to Latin America</a>
+      <div class="research-card-meta">Documento CEDE</div>
+      <p class="research-card-desc">In this paper, I estimate the effects of unconventional monetary policies from the United States, Euro Area, United Kingdom, and Japan (advanced economies) on Mexico, Brazil, Colombia, Chile, and Peru using a global projection model with shadow rates. I found that spillovers are small and the most relevant come from the United States. I also found that volatility spillovers from advanced economies’ unconventional monetary policies are negligible. Historical decomposition exercises show that the most affected variables by spillovers are the real exchange rate and inflation. Finally, I also simulate counterfactual scenarios in which there were no unconventional monetary policies from advanced economies past 2008, and I found that Latin American economies would have had GDP losses close to 0.5% and inflation 1.5% lower at the end of 2014. This shows the high costs of not implementing these policies and these results are relevant to the COVID-19 crisis..</p>
+    </div>
+  </article>
 
-<script>
-(function () {
-  // Modal open / close — same mechanic as the original Research page,
-  // works on any element with data-modal="paper-id"
-  function openModal(id) {
-    var m = document.getElementById(id);
-    if (!m) return;
-    m.classList.add('open');
-    document.body.classList.add('modal-open');
-  }
-  function closeAll() {
-    document.querySelectorAll('.research-modal.open').forEach(function (m) {
-      m.classList.remove('open');
-    });
-    document.body.classList.remove('modal-open');
-  }
-
-  document.addEventListener('click', function (e) {
-    var trigger = e.target.closest('[data-modal]');
-    if (trigger) {
-      e.preventDefault();
-      openModal(trigger.dataset.modal);
-      return;
-    }
-    if (e.target.closest('[data-close]')) {
-      closeAll();
-    }
-  });
-
-  // Keyboard: Enter / Space opens modal when trigger is focused; ESC closes
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
-      closeAll();
-      return;
-    }
-    if (e.key === 'Enter' || e.key === ' ') {
-      var active = document.activeElement;
-      if (active && active.dataset && active.dataset.modal) {
-        e.preventDefault();
-        openModal(active.dataset.modal);
-      }
-    }
-  });
-})();
-</script>
+</section>
