@@ -1,61 +1,416 @@
 ---
-layout: page
+layout: default
 title: "Research"
+permalink: /Research/
 backgroundcolor: white
 ---
 
+<!-- Load Fraunces (display) — PT Sans is already loaded site-wide for body -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
 
-<section class="research-section">
-  <h2 class="research-section-title">Peer-reviewed publications</h2>
+<style>
+  /* =========================================================
+     Research page — scoped under .research-page to avoid
+     collisions with the global .research-card-* classes in
+     _sass/classes.sass.
+     ========================================================= */
+  .research-page {
+    --r-ink:         #0F1419;
+    --r-ink-soft:    #3B4452;
+    --r-navy:        #1F3A4F;
+    --r-accent:      #B8651B;
+    --r-muted:       #7E8B8E;
+    --r-paper:       #FAF9F7;
+    --r-rule:        rgba(15, 20, 25, 0.09);
+    --r-rule-strong: rgba(15, 20, 25, 0.18);
+    --r-display:     "Fraunces", Georgia, serif;
+    position: relative;
+  }
+  .research-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(15, 20, 25, 0.045) 1px, transparent 1px);
+    background-size: 26px 26px;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .research-page > * { position: relative; z-index: 1; }
 
-  <article class="research-card">
-    <a href="/files/CrossCountryHeterogeneity_Website.pdf">
-      <img class="research-card-image" src="/files/FigureMeta_1.jpg" alt="Random-effects meta-analysis of hysteresis elasticities across 30 economies">
-    </a>
-    <div class="research-card-body">
-      <a class="research-card-title" href="/files/CrossCountryHeterogeneity_Website.pdf">Cross-country heterogeneity in potential-GDP and NAIRU hysteresis: A Bayesian approach</a>
-      <div class="research-card-meta">Journal of Economic Dynamics and Control, forthcoming</div>
-      <p class="research-card-desc">This paper extends the semi-structural New Keynesian framework to estimate the potential GDP hysteresis elasticity (η) and the NAIRU hysteresis elasticity (ηu) jointly, by Bayesian methods, for 30 economies. The cross-country averages are 0.46 for η and 0.40 for ηu, implying that 0.63 of a temporary demand shock remains in GDP after ten years. Cross-country variation in ηu is high and seems to be higher in economies with stricter employment protection laws and in economies whose monetary policy spent longer at its lower bound. Local projections on the identified demand shocks show that employment and capital respond persistently to demand shocks while measured TFP does not, a pattern consistent with accumulation-based mechanisms rather than TFP channels. These findings imply that the costs of recessions and aggressive disinflation are substantially higher than conventional frameworks suggest.</p>
+  /* -------- Page header -------- */
+  .research-page .r-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--r-accent);
+    font-weight: 700;
+    margin: 0 0 0.9rem;
+  }
+  .research-page h1.r-title {
+    font-family: var(--r-display);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    line-height: 1;
+    letter-spacing: -0.025em;
+    color: var(--r-ink);
+    margin: 0 0 1.1rem;
+  }
+  .research-page .r-rule {
+    width: 64px;
+    height: 3px;
+    background: var(--r-accent);
+    margin: 0 0 1.8rem;
+    border: 0;
+  }
+  .research-page .r-intro {
+    color: var(--r-ink-soft);
+    line-height: 1.7;
+    margin: 0 0 3rem;
+    text-align: left;
+    font-size: 1.02rem;
+    max-width: 44rem;
+  }
+  .research-page .r-intro strong { color: var(--r-ink); }
+
+  /* -------- Section headers -------- */
+  .research-page .r-section {
+    margin: 2.5rem 0 2rem;
+  }
+  .research-page h2.r-section-title {
+    font-family: var(--r-display);
+    font-weight: 600;
+    font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+    letter-spacing: -0.015em;
+    color: var(--r-ink);
+    margin: 0 0 0.6rem;
+    line-height: 1.1;
+  }
+  .research-page .r-section-rule {
+    width: 100%;
+    height: 1px;
+    background: var(--r-rule);
+    margin: 0 0 1.8rem;
+    border: 0;
+  }
+
+  /* -------- Paper cards -------- */
+  .research-page .r-card {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--r-rule);
+  }
+  .research-page .r-card:last-child {
+    border-bottom: 0;
+  }
+  .research-page .r-thumb {
+    background: var(--r-paper);
+    border: 1px solid var(--r-rule);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s;
+    padding: 0.8rem;
+  }
+  .research-page .r-thumb:hover {
+    border-color: var(--r-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(15, 20, 25, 0.08);
+  }
+  .research-page .r-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0;
+  }
+  .research-page .r-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .research-page .r-card-meta {
+    font-size: 0.82rem;
+    color: var(--r-accent);
+    font-weight: 700;
+    font-style: italic;
+    margin: 0;
+  }
+  .research-page h3.r-card-title {
+    font-family: var(--r-display);
+    font-weight: 600;
+    font-size: 1.35rem;
+    line-height: 1.25;
+    letter-spacing: -0.012em;
+    color: var(--r-ink);
+    margin: 0 0 0.4rem;
+  }
+  .research-page .r-card-desc {
+    color: var(--r-ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+    text-align: justify;
+  }
+  .research-page .r-btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 0.4rem;
+  }
+  .research-page a.r-btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1.5px solid var(--r-accent);
+    color: var(--r-accent);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.15s;
+    box-shadow: none;
+    cursor: pointer;
+    background: transparent;
+    font-family: inherit;
+  }
+  .research-page a.r-btn:hover,
+  .research-page button.r-btn:hover {
+    background: var(--r-accent);
+    color: #FFF;
+    text-decoration: none;
+  }
+  .research-page button.r-btn {
+    display: inline-block;
+    padding: 0.5em 1em;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border: 1.5px solid var(--r-accent);
+    color: var(--r-accent);
+    border-radius: 3px;
+    text-decoration: none;
+    transition: all 0.15s;
+    cursor: pointer;
+    background: transparent;
+    font-family: inherit;
+  }
+
+  @media (max-width: 760px) {
+    .research-page .r-card {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+    }
+    .research-page .r-thumb {
+      max-width: 320px;
+    }
+  }
+
+  /* -------- Modal (reuses .research-modal-* in _sass/classes.sass
+     but we add our own styling here too to be safe) -------- */
+  .r-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 19, 0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .r-modal-overlay.open {
+    display: flex;
+  }
+  .r-modal {
+    background: #FFF;
+    max-width: 720px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 4px;
+    padding: 2.2rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+  .r-modal-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 1rem;
+    background: transparent;
+    border: 0;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--r-ink-soft, #3B4452);
+    cursor: pointer;
+    padding: 0.3rem 0.6rem;
+  }
+  .r-modal-close:hover {
+    color: var(--r-accent, #B8651B);
+  }
+  .r-modal h3 {
+    font-family: var(--r-display, "Fraunces", Georgia, serif);
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 0 0 0.6rem;
+    padding-right: 2rem;
+  }
+  .r-modal .r-modal-meta {
+    color: var(--r-accent, #B8651B);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.85rem;
+    margin: 0 0 1.4rem;
+  }
+  .r-modal h4 {
+    font-family: var(--r-display, "Fraunces", Georgia, serif);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--r-ink, #0F1419);
+    margin: 1.4rem 0 0.5rem;
+  }
+  .r-modal p {
+    color: var(--r-ink-soft, #3B4452);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 0.8rem;
+    text-align: justify;
+  }
+  .r-modal ul {
+    padding-left: 1.2rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+  .r-modal li {
+    color: var(--r-ink-soft, #3B4452);
+    font-size: 0.93rem;
+    line-height: 1.55;
+    margin: 0.3rem 0;
+  }
+  .r-keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0.4rem 0 0.8rem;
+  }
+  .r-keyword {
+    display: inline-block;
+    padding: 0.25em 0.7em;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(184, 101, 27, 0.10);
+    color: var(--r-accent, #B8651B);
+    border-radius: 999px;
+  }
+</style>
+
+<article class="research-page">
+
+  <div class="r-eyebrow">Publications · 2021 – 2026</div>
+  <h1 class="r-title">Research</h1>
+  <hr class="r-rule">
+  <p class="r-intro">
+    My research focuses on macroeconomics, with two main strands:
+    <strong>GDP and unemployment hysteresis</strong>, and
+    <strong>monetary policy spillovers to Latin American economies</strong>.
+    The papers below span peer-reviewed publications, book chapters, and working
+    papers. Click any image to read the abstract, keywords, and highlights.
+  </p>
+
+  {% assign type_order = "peer-reviewed|Peer-reviewed publications,book-chapter|Book chapters,working-paper|Working papers" | split: "," %}
+
+  {% for entry in type_order %}
+    {% assign parts = entry | split: "|" %}
+    {% assign type_code = parts[0] %}
+    {% assign type_label = parts[1] %}
+
+    {% assign papers_in_type = site.data.research | where: "type", type_code %}
+    {% if papers_in_type.size > 0 %}
+      <section class="r-section">
+        <h2 class="r-section-title">{{ type_label }}</h2>
+        <hr class="r-section-rule">
+
+        {% for p in papers_in_type %}
+          <div class="r-card">
+            <div class="r-thumb" onclick="openResearchModal('{{ p.id }}')" role="button" tabindex="0"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchModal('{{ p.id }}');}">
+              <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
+            </div>
+            <div class="r-card-body">
+              <div class="r-card-meta">{{ p.meta }}</div>
+              <h3 class="r-card-title">{{ p.title }}</h3>
+              <p class="r-card-desc">{{ p.description }}</p>
+              <div class="r-btn-row">
+                <a class="r-btn" href="{{ p.url | relative_url }}" target="_blank" rel="noopener">Read paper →</a>
+                <button type="button" class="r-btn" onclick="openResearchModal('{{ p.id }}')">Details</button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </section>
+    {% endif %}
+  {% endfor %}
+
+</article>
+
+<!-- ==================== Modals (one per paper) ==================== -->
+{% for p in site.data.research %}
+<div class="r-modal-overlay" id="modal-{{ p.id }}" onclick="if(event.target===this)closeResearchModal('{{ p.id }}')">
+  <div class="r-modal" role="dialog" aria-labelledby="modal-title-{{ p.id }}">
+    <button type="button" class="r-modal-close" onclick="closeResearchModal('{{ p.id }}')" aria-label="Close">×</button>
+    <h3 id="modal-title-{{ p.id }}">{{ p.title }}</h3>
+    <div class="r-modal-meta">{{ p.meta }}</div>
+
+    <h4>Abstract</h4>
+    <p>{{ p.abstract }}</p>
+
+    {% if p.keywords.size > 0 %}
+      <h4>Keywords</h4>
+      <div class="r-keywords">
+        {% for k in p.keywords %}
+          <span class="r-keyword">{{ k }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if p.highlights.size > 0 %}
+      <h4>Highlights</h4>
+      <ul>
+        {% for h in p.highlights %}
+          <li>{{ h }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <div class="r-btn-row" style="margin-top: 1.5rem;">
+      <a class="r-btn" href="{{ p.url | relative_url }}" target="_blank" rel="noopener">Read paper →</a>
     </div>
-  </article>
+  </div>
+</div>
+{% endfor %}
 
-  <article class="research-card">
-    <a href="/files/BlindedManuscript_13112023_Revised.pdf">
-      <img class="research-card-image" src="/files/GraphEconomicsLetters.png" alt="IMF's and OECD's real time output gap estimates">
-    </a>
-    <div class="research-card-body">
-      <a class="research-card-title" href="https://www.sciencedirect.com/science/article/abs/pii/S0165176523004925">Is there hysteresis in potential output estimates?</a>
-      <div class="research-card-meta">Economics Letters, 2024</div>
-      <p class="research-card-desc">Using an error correction model, this paper studies the dynamics of GDP and potential GDP using OECD's Economic Outlook and IMF's World Economic Outlook estimates of the output gap. The findings suggest the presence of hysteresis, implying that short-run shocks to GDP have sizeable permanent effects on potential GDP.</p>
-    </div>
-  </article>
-
-</section>
-
-
-<section class="research-section">
-  <h2 class="research-section-title">Working papers</h2>
-
-  <article class="research-card">
-    <a href="REPLACE_WITH_PDF_URL">
-      <img class="research-card-image" src="/files/Figura3.jpg" alt="Euro Area trend GDP under hysteresis">
-    </a>
-    <div class="research-card-body">
-      <a class="research-card-title" href="https://repositorio.banrep.gov.co/server/api/core/bitstreams/694b3c43-13c8-4964-bfb1-1722c096cebd/content">A trend-cycle decomposition with hysteresis</a>
-      <div class="research-card-meta">With Javier Gómez-Pineda · Borradores de Economía</div>
-      <p class="research-card-desc">The business cycle is the cycle in the output gap and also in a stationary measure of trend output. Both the output gap and trend output are driven by joint trend-cycle shocks. The model is a univariate trend-cycle decomposition with hysteresis in trend output that enables the estimation of the output gap and trend output in 81 economies in quarterly frequency, since 1995Q1; and 184 economies in yearly frequency, in several cases since 1950, and in a few cases since 1820. Volatility and dispersion, as well as the frequency of large joint trend-cycle shocks, were low during the Gilded Age period; high during the interwar period, even more so in advanced (AD) economies compared to emerging market and developing economies (EMDE); and low in AD economies and high in EMDE economies in the post WWII period. In contrast with other existing estimates of trend output, those from the trend-cycle decomposition with hysteresis do not evolve smoothly, do not result in an artificial boom before recessions and are less sensitive to new data..</p>
-    </div>
-  </article>
-
-  <article class="research-card">
-    <a href="https://repositorio.uniandes.edu.co/server/api/core/bitstreams/08e54136-a37d-490e-982d-baf0ef38b819/content">
-      <img class="research-card-image" src="/files/Contrafacual_US_LY_english.png" alt="GDP contraction of about 4% from not implementing UMP from 2008 to 2014">
-    </a>
-    <div class="research-card-body">
-      <a class="research-card-title" href="https://repositorio.uniandes.edu.co/server/api/core/bitstreams/08e54136-a37d-490e-982d-baf0ef38b819/content">Spillovers of unconventional monetary policy from advanced economies to Latin America</a>
-      <div class="research-card-meta">Documento CEDE</div>
-      <p class="research-card-desc">In this paper, I estimate the effects of unconventional monetary policies from the United States, Euro Area, United Kingdom, and Japan (advanced economies) on Mexico, Brazil, Colombia, Chile, and Peru using a global projection model with shadow rates. I found that spillovers are small and the most relevant come from the United States. I also found that volatility spillovers from advanced economies’ unconventional monetary policies are negligible. Historical decomposition exercises show that the most affected variables by spillovers are the real exchange rate and inflation. Finally, I also simulate counterfactual scenarios in which there were no unconventional monetary policies from advanced economies past 2008, and I found that Latin American economies would have had GDP losses close to 0.5% and inflation 1.5% lower at the end of 2014. This shows the high costs of not implementing these policies and these results are relevant to the COVID-19 crisis..</p>
-    </div>
-  </article>
-
-</section>
+<script>
+function openResearchModal(id) {
+  const modal = document.getElementById('modal-' + id);
+  if (modal) {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeResearchModal(id) {
+  const modal = document.getElementById('modal-' + id);
+  if (modal) {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+// Close on Escape
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.r-modal-overlay.open').forEach(function(m) {
+      m.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+});
+</script>
