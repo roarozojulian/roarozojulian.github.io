@@ -302,6 +302,71 @@ backgroundcolor: white
     color: var(--r-accent, #B8651B);
     border-radius: 999px;
   }
+
+  /* -------- Lightbox for figure enlargement -------- */
+  .research-page .r-thumb {
+    cursor: zoom-in;
+  }
+  .r-lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 19, 0.90);
+    z-index: 1100;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    cursor: zoom-out;
+  }
+  .r-lightbox.open {
+    display: flex;
+  }
+  .r-lightbox-inner {
+    max-width: 95vw;
+    max-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    cursor: default;
+  }
+  .r-lightbox img {
+    max-width: 95vw;
+    max-height: 82vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0;
+    background: #FFF;
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+  .r-lightbox-caption {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.88rem;
+    font-style: italic;
+    text-align: center;
+    max-width: 50rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .r-lightbox-close {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    border: 0;
+    font-size: 2.4rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    padding: 0.3rem 0.8rem;
+    z-index: 1101;
+  }
+  .r-lightbox-close:hover {
+    color: #FFF;
+  }
 </style>
 
 <article class="research-page">
@@ -314,7 +379,8 @@ backgroundcolor: white
     <strong>GDP and unemployment hysteresis</strong>, and
     <strong>monetary policy spillovers to Latin American economies</strong>.
     The papers below span peer-reviewed publications, book chapters, and working
-    papers. Click any image to read the abstract, keywords, and highlights.
+    papers. Click any image to view the figure in full, or hit <em>Details</em>
+    for the abstract, keywords, and highlights.
   </p>
 
   {% assign type_order = "peer-reviewed|Peer-reviewed publications,book-chapter|Book chapters,working-paper|Working papers" | split: "," %}
@@ -324,7 +390,7 @@ backgroundcolor: white
     {% assign type_code = parts[0] %}
     {% assign type_label = parts[1] %}
 
-    {% assign papers_in_type = site.data.research | where: "type", type_code %}
+    {% assign papers_in_type = site.data.research | where: "type", type_code | sort: "year" | reverse %}
     {% if papers_in_type.size > 0 %}
       <section class="r-section">
         <h2 class="r-section-title">{{ type_label }}</h2>
@@ -332,8 +398,9 @@ backgroundcolor: white
 
         {% for p in papers_in_type %}
           <div class="r-card">
-            <div class="r-thumb" onclick="openResearchModal('{{ p.id }}')" role="button" tabindex="0"
-                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchModal('{{ p.id }}');}">
+            <div class="r-thumb" onclick="openResearchLightbox('{{ p.id }}')" role="button" tabindex="0"
+                 aria-label="View larger image"
+                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchLightbox('{{ p.id }}');}">
               <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
             </div>
             <div class="r-card-body">
@@ -389,6 +456,17 @@ backgroundcolor: white
 </div>
 {% endfor %}
 
+<!-- ==================== Lightboxes (one per paper) ==================== -->
+{% for p in site.data.research %}
+<div class="r-lightbox" id="lightbox-{{ p.id }}" onclick="closeResearchLightbox('{{ p.id }}')">
+  <button type="button" class="r-lightbox-close" onclick="event.stopPropagation(); closeResearchLightbox('{{ p.id }}')" aria-label="Close">×</button>
+  <div class="r-lightbox-inner" onclick="event.stopPropagation()">
+    <img src="{{ '/files/' | append: p.image | relative_url }}" alt="{{ p.alt }}">
+    <p class="r-lightbox-caption">{{ p.alt }} — {{ p.title }}</p>
+  </div>
+</div>
+{% endfor %}
+
 <script>
 function openResearchModal(id) {
   const modal = document.getElementById('modal-' + id);
@@ -404,10 +482,24 @@ function closeResearchModal(id) {
     document.body.style.overflow = '';
   }
 }
-// Close on Escape
+function openResearchLightbox(id) {
+  const lb = document.getElementById('lightbox-' + id);
+  if (lb) {
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+function closeResearchLightbox(id) {
+  const lb = document.getElementById('lightbox-' + id);
+  if (lb) {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+// Close any open modal or lightbox on Escape
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
-    document.querySelectorAll('.r-modal-overlay.open').forEach(function(m) {
+    document.querySelectorAll('.r-modal-overlay.open, .r-lightbox.open').forEach(function(m) {
       m.classList.remove('open');
       document.body.style.overflow = '';
     });
