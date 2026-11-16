@@ -14,6 +14,45 @@
 #   featured : true on exactly one entry (rendered large in dark band)
 #   new      : true on most recent 2-3 entries (shows NEW tag)
 
+- date: "November 13, 2026"
+  year: 2026
+  title: "When do spending cuts fail to lower the debt?"
+  image: "fig_intro_esp_grc.png"
+  topics: ["Fiscal policy", "Hysteresis"]
+  summary: >
+    The public debate on the Ley de Rescate Económico has focused on its
+    micro effects — distributional incidence — and whether it stabilizes
+    the debt. Drawing on DeLong & Summers (2012), I examine the macro link
+    through two parameters: the fiscal multiplier and the hysteresis
+    elasticity. Europe's 2010–2014 austerity shows how adjustment can
+    backfire when both are high — the "fiscal doom loop". Colombia's
+    multiplier (~0.8) is lower than Europe's in 2012, and my JEDC paper
+    estimates the hysteresis elasticity at ~0.4. Both are advantages, but
+    the adjustment must spare public investment and be perceived as
+    permanent for markets to believe it.
+  web: ""                                # TODO: add La República URL once published
+  featured: true
+  new: true
+
+- date: "August 21, 2026"
+  year: 2026
+  title: "From public consumption to investment: the next government's challenge"
+  image: "ColumnaConsInv.jpg"
+  topics: ["Growth", "Fiscal policy"]
+  summary: >
+    Second-quarter GDP figures surprised on the upside — 3.5% annual growth —
+    but the composition matters: public consumption grew 12.2% and contributed
+    54% of total growth, while fixed investment remains ~9% below 2019 levels.
+    This growth model is unsustainable: deficit-financed, non-productive, and
+    building external imbalances. Yet markets are already pricing in a shift:
+    after the election of Abelardo de la Espriella, ten-year TES yields fell
+    from 15% to 12%, the peso appreciated ~20%, and consumer confidence hit a
+    multi-year high. But the August 10 earthquake has added $30 bn of
+    reconstruction needs, raising the stakes. Expectations can anchor the
+    recovery — only a credible fiscal reform can sustain it.
+  web: ""                                # TODO: add La República URL once published
+  new: true
+
 - date: "February 20, 2026"
   year: 2026
   title: "Can you change the direction in which the clock hands move?"
@@ -29,7 +68,6 @@
     to a wage-led economy requires structural transformation — not decrees.
   web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/se-puede-cambiar-el-sentido-de-las-manecillas-del-reloj-4331617"
   pdf: "PDF_Feb2026_smallpdf.pdf"
-  featured: true
   new: true
 
 - date: "January 23, 2026"
@@ -47,7 +85,6 @@
     apparent stability, an unprecedented fiscal time bomb is building.
   web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/2026-una-bomba-de-tiempo-bajo-fachada-de-estabilidad-4310399"
   pdf: "PDF_Ene2026_cropped.pdf"
-  new: true
 
 - date: "November 21, 2025"
   year: 2025
@@ -64,7 +101,6 @@
     interest rates down.
   web: "https://www.larepublica.co/analisis/econometria-consultores-2889073/la-inflacion-en-colombia-es-un-problema-fiscal-4274396"
   pdf: "PDF_Nov2025_cropped.pdf"
-  new: true
 
 - date: "August 29, 2025"
   year: 2025
