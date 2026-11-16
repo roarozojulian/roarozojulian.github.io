@@ -287,8 +287,8 @@ backgroundcolor: white
 
     <div class="h-tiles">
 
-      {% comment %} ===== 1) Peer-reviewed paper (pulled from research.yml) ===== {% endcomment %}
-      {% assign peer = site.data.research | where: "type", "peer-reviewed" | first %}
+      {% comment %} ===== 1) Most recent peer-reviewed paper (auto-sorted by year, newest first) ===== {% endcomment %}
+      {% assign peer = site.data.research | where: "type", "peer-reviewed" | sort: "year" | reverse | first %}
       {% if peer %}
       <a class="h-tile" href="{{ '/Research/' | relative_url }}">
         <div class="h-tile-kind">Peer-reviewed publication</div>
@@ -299,14 +299,18 @@ backgroundcolor: white
       </a>
       {% endif %}
 
-      {% comment %} ===== 2) Latest press column (pulled from press.yml, first entry = newest) ===== {% endcomment %}
+      {% comment %}
+        ===== 2) Latest press column =====
+        Shown with the ORIGINAL Spanish title and summary (that's how the column
+        was published in La República). The tile links to /Press/ (the Spanish default).
+      {% endcomment %}
       {% assign latest_press = site.data.press | first %}
       {% if latest_press %}
       <a class="h-tile" href="{{ '/Press/' | relative_url }}">
         <div class="h-tile-kind">Latest column · {{ latest_press.date | split: "," | last | strip }}</div>
-        <div class="h-tile-title">{{ latest_press.title }}</div>
+        <div class="h-tile-title">{{ latest_press.title_es }}</div>
         <div class="h-tile-meta">{{ latest_press.date }} · {{ latest_press.venue | default: "La República" }}</div>
-        <p class="h-tile-desc">{{ latest_press.summary | strip_html | truncatewords: 30 }}</p>
+        <p class="h-tile-desc">{{ latest_press.summary_es | strip_html | truncatewords: 30 }}</p>
         <span class="h-tile-cta">Read all columns →</span>
       </a>
       {% endif %}
